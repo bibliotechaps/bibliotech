@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +15,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    
+
+
 
 </head>
+
 <body>
 
     <!--Div para a imagem de fundo de cima (ter em todos os códigos)-->
@@ -32,7 +34,7 @@
         <!-- Ícones -->
         <div id="icone-livro" class="hover">
             <a href="ConsultarLivro.html"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
-        </div>  
+        </div>
         <div id="icone-perfil" class="hover">
             <a href="perfil.html"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
         </div>
@@ -49,84 +51,91 @@
 
 
     <div class="container" id="menor">
-    <form method="post"  autocomplete="on" >
+        <form method="post" autocomplete="on">
 
 
-       
-        <!--Título-->
-        <div class="col-12 mb-2">
-            <h1 id="title"><b> Editar Livro </b></h1>
-            <hr>
-        </div>
-        
-        
-        
-        <div class="row justify-content-md-center ">
-        <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
-        <label style="margin: auto;" for="txtTitulo">Título:</label> 
-        <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Nome do livro:" class="form-control" autofocus required>
-        </div>
 
-        <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-        <label style="margin: auto;" for="txtAutor">Autor:</label> <br>
-        <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor do livro:" class="form-control" required>  
-        </div>
-
-        <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-        <label style="margin: auto;" for="txtEditora">Editora:</label> <br>
-        <input type="text" name="txtEditora" id="txtEditora" placeholder="Editora do livro:" class="form-control" required> 
-        </div>
-        </div>
-
-       
-        <div class="row justify-content-md-center ">
-        
-
-        <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-        <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
-        <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required> 
-        </div>
-
-        <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-        <label style="margin: auto;" for="IntNumeroPag">Número de Páginas:</label> <br>
-        <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:" class="form-control" required> 
-        </div>
-        
-        <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-        <label style="margin: auto;" for="Volume">Volume:</label> <br>
-        <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required> 
-        </div>
-        </div>
-
-
-        <div class="row justify-content-md-center ">
-        <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-        <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
-        <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required>
-        </div>
-
-        </div>
-
-        <div class="row justify-content-md-center">
-            <div style="align-items: center;">
-                <input type="submit" class="btn btn-success" value="salvar"> 
-                <a href="ConsultarLivro.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+            <!--Título-->
+            <div class="col-12 mb-2">
+                <h1 id="title"><b> Editar Livro </b></h1>
+                <hr>
             </div>
-        </div>
-        
-       <!--
+
+
+
+            <div class="row justify-content-md-center ">
+                <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
+                    <label style="margin: auto;" for="txtTitulo">Título:</label>
+                    <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Nome do livro:" class="form-control"
+                        autofocus required>
+                </div>
+
+                <div class="form-group col-auto col-6
+        col-lg-4 
+        col-xl-3">
+                    <label style="margin: auto;" for="txtAutor">Autor:</label> <br>
+                    <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor do livro:" class="form-control"
+                        required>
+                </div>
+
+                <div class="form-group col-auto col-6
+        col-lg-4 
+        col-xl-3">
+                    <label style="margin: auto;" for="txtEditora">Editora:</label> <br>
+                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Editora do livro:"
+                        class="form-control" required>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-md-center ">
+
+
+                <div class="form-group col-auto col-6
+        col-lg-4 
+        col-xl-3">
+                    <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
+                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:"
+                        class="form-control" required>
+                </div>
+
+                <div class="form-group col-auto col-6
+        col-lg-4 
+        col-xl-3">
+                    <label style="margin: auto;" for="IntNumeroPag">Número de Páginas:</label> <br>
+                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:"
+                        class="form-control" required>
+                </div>
+
+                <div class="form-group col-auto col-6
+        col-lg-4 
+        col-xl-3">
+                    <label style="margin: auto;" for="Volume">Volume:</label> <br>
+                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control"
+                        required>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-md-center ">
+                <div class="form-group col-auto col-6
+        col-lg-4 
+        col-xl-3">
+                    <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
+                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:"
+                        class="form-control" required>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-md-center">
+                <div style="align-items: center;">
+                    <input type="submit" class="btn btn-success" value="salvar">
+                    <a href="ConsultarLivro.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                </div>
+            </div>
+
+            <!--
            <div class="row justify-content-md-center">
         
             <div style="align-items: center;" >
@@ -138,9 +147,9 @@
         </div>
         -->
 
-    </form>
+        </form>
 
-<!-- 
+        <!-- 
      <div class="row justify-content-center">
         <div class="mr-1">
             <input type="submit" class="btn btn-success" value="salvar"> 
@@ -150,11 +159,11 @@
         </div>
     </div>
 -->
-   
 
-</div>
 
-   <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
+    </div>
+
+    <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
     <div class="imagemFundoBottom">
         <div class="container">
             <div class="row justify-content-center">
@@ -184,6 +193,7 @@
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>
