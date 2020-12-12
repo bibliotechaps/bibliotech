@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/arquivo1.css">
     <!-- JS -->
     <script type="text/javascript" src="js/arquivo-js.js"></script>
+    <!-- JQuerry masks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 </head>
 
@@ -36,7 +38,7 @@
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admn.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -49,7 +51,7 @@
         </div>
     </div>
     <div class="container" id="menor">
-        <form method="POST" action="">
+        <form method="POST" action="insert-admin.php">
 
             <div class="col-12 mb-2">
                 <h1 id="title"><b>Cadastrar Admin</b></h1>
@@ -60,71 +62,71 @@
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="nome_cad">Nome:</label><br>
-                    <input name="nome_cad" id="nome_cad" class="form-control" type="text" placeholder="Seu nome"
-                        autofocus required>
+                    <input name="nome" id="nome" class="form-control" type="text" placeholder="Seu nome" autofocus required>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="login_cad">Login:</label><br>
-                    <input name="login_cad" id="login_cad" class="form-control" type="text" placeholder="Seu Login"
-                        required>
+                    <input name="login" id="login" class="form-control" type="text" placeholder="Seu Login" required>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="senha_cad">Senha:</label><br>
-                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="1234"
-                        required>
+                    <input name="senha" id="senha" class="form-control" type="password" placeholder="1234" required>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="senha_cad2">Confirmar Senha:</label><br>
-                    <input name="senha_cad2" id="senha_cad2" class="form-control" type="password" placeholder="1234"
-                        required>
+                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234">
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="email_cad">Email:</label><br>
-                    <input name="email_cad" id="email_cad" class="form-control" type="text" placeholder="Seu Email"
-                        required>
-                </div>
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="end_cad">Endereço:</label><br>
-                    <input name="end_cad" id="end_cad" class="form-control" type="text" placeholder="Seu Endereço"
-                        required>
+                    <input name="email" id="email" class="form-control" type="text" placeholder="Seu Email" required>
                 </div>
 
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cep_cad">CEP:</label><br>
-                    <input name="cep_cad" id="cep_cad" class="form-control" type="number" placeholder="Seu CEP" required
-                        minlength="8" maxlength="8">
-                </div>
-
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="bairro_cad">Bairro:</label><br>
-                    <input name="bairro_cad" id="bairro_cad" class="form-control" type="text" placeholder="Seu Bairro"
-                        required>
-                </div>
-
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cidade_cad">Cidade:</label><br>
-                    <input name="cidade_cad" id="cidade_cad" class="form-control" type="text" placeholder="Sua Cidade"
-                        required>
-                </div>
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="datanasc_cad">Data de Nascimento:</label><br>
-                    <input name="datanasc_cad" id="datanasc_cad" class="form-control" type="date" required>
-                </div>
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cpf_cad">CPF:</label><br>
-                    <input name="cpf_cad" id="cpf_cad" class="form-control" type="number" placeholder="Seu CPF" required
-                        minlength="11" maxlength="11">
-                </div>
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="tel_cad">Telefone:</label><br>
-                    <input name="tel_cad" id="tel_cad" class="form-control" type="tel" placeholder="Seu Telefone"
-                        minlength="11" maxlength="11">
+                    <input name="telefone" id="telefone" class="form-control" type="tel" placeholder="Seu Telefone">
+                </div>
+                <!--  onkeypress="$(this).mask('(00) 90000-0000')" -->
+                <div class="form-group  col-3">
+                    <label style="margin: auto;" for="datanasc_cad">Data de Nascimento:</label><br>
+                    <input name="dataNasc" id="dataNasc" class="form-control" type="date" required>
                 </div>
 
+                <div class="form-group  col-3">
+                    <label style="margin: auto;" for="cpf_cad">CPF:</label><br>
+                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="Ex.: 000.000.000-00" >
+                </div>
+                <!--  onkeypress="$(this).mask('000.000.000-00');"-->
+                <div class="form-group col-3">
+                    <label style="margin: auto;" for="cep_cad">CEP:</label><br>
+                    <input name="cep" id="cep" type="text" class="form-control" placeholder="Seu CEP"   >
+                </div>
+                <!--  onkeypress="$(this).mask('00.000-000')" -->
+                <div class="form-group  col-3">
+                    <label style="margin: auto;" for="bairro_cad">Bairro:</label><br>
+                    <input name="bairro" id="bairro" class="form-control" type="text" placeholder="Seu Bairro" required>
+                </div>
+                <div class="form-group col-3">
+                    <label style="margin: auto;" for="pais_cad">Estado:</label><br>
+                    <input name="estado" id="estado" class="form-control" type="text" placeholder="Seu Estado" required>
+                </div>
+                <div class="form-group col-3">
+                    <label style="margin: auto;" for="cidade_cad">Cidade:</label><br>
+                    <input name="cidade" id="cidade" class="form-control" type="text" placeholder="Sua Cidade" required>
+                </div>
+                <div class="col-4">
+                    <!-- só para identar -->
+                </div>
+                <div class="form-group  col-4">
+                    <label style="margin: auto;" for="end_cad">Endereço:</label><br>
+                    <input name="endereco" id="endereco" class="form-control" type="text" placeholder="Seu Endereço" required>
+                </div>
+                <div class="col-4">
+                    <!-- só para identar -->
+                </div>
                 <div style="align-items: center;">
                     <input class="btn btn-success" type="submit" name="btnFinalizar" value="Finalizar">
                     <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
@@ -132,8 +134,7 @@
             </div>
 
             <div class="mb-4 mr-5 mt-4">
-                <h6 style="text-align-last: right; font-size:small; ">Você já é um Admin? <a class="mt-3"
-                        href="logAdmin"> Clique aqui!</a></h6>
+                <h6 style="text-align-last: right; font-size:small; ">Você já é um Admin? <a class="mt-3" href="logAdmin"> Clique aqui!</a></h6>
             </div>
         </form>
     </div>
@@ -146,8 +147,7 @@
                         <h1>Contate-nos</h1>
                     </div>
                     <div style="color:white" class="hover">
-                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png"
-                                alt="iconeInsta"></a>Instagram
+                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png" alt="iconeInsta"></a>Instagram
                     </div>
                     <div style="color:white">
                         <img src="img/mail.png" alt="iconeMail">bibliotech@outlook.com.br
