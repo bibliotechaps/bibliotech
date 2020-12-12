@@ -33,23 +33,23 @@
   <!-- Ícones -->
   <!-- Ícones -->
   <div id="icone-livro" class="hover">
-    <a href="ConsultarLivro.html"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
+    <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
   </div>
   <div id="icone-perfil" class="hover">
-    <a href="perfil.html"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+    <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
   </div>
   <div id="icone-sair" class="hover">
     <img src="img/logout.png" alt="imagem login" title="Sair">Sair
   </div>
   <div class="hover" id="icone-home">
-    <a href="inicial.html"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
+    <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
   </div>
   <div class="hover" id="icone-aluno">
-    <a href="perfil-aluno.html"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
+    <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
   </div>
   <div class="container" id="menor">
 
-    <form name="CadastroAluno" action="" method="POST" style="padding: 20px; align-content: center; ">
+    <form name="CadastroAluno" action="inserirAluno.php" method="POST" style="padding: 20px; align-content: center; ">
 
       <div class="row justify-content-around">
         <h1 id="title"><b>Cadastrar Aluno </b></h1>
@@ -120,7 +120,7 @@
 
         <div style="align-items: center;">
           <input class="btn btn-success" type="submit" name="btnFinalizar" value="Finalizar">
-          <a href="inicial.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
+          <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
         </div>
 
       </div>

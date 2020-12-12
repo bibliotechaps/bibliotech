@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Perfil</title>
+    <title>Perfil</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <!-- div para barra de configurações (ter em todos os códigos)-->
+    <!--Div para a imagem de fundo de cima (ter em todos os códigos)-->
     <div class="imagemFundoTop">
         <!--<img src="img/fundo-cinza.png" alt="Imagem de Fundo" width=100% height=75px>-->
 
@@ -33,24 +33,24 @@
 
         <!-- Ícones -->
         <div id="icone-livro" class="hover">
-            <a href="ConsultarLivro.html"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
+            <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil.html"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
         </div>
         <div class="hover" id="icone-home">
-            <a href="inicial.html"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
+            <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
         </div>
         <div class="hover" id="icone-aluno">
-            <a href="perfil-aluno.html"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
+            <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
         </div>
     </div>
 
     <div class="container" id="menor">
-        <form method="POST" action="">
+        <form method="POST">
 
             <!--Título-->
             <div class="col-12 mb-2">
@@ -63,72 +63,81 @@
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="nome_cad">Nome:</label><br>
                     <input name="nome_cad" id="nome_cad" class="form-control" type="text" placeholder="Seu nome"
-                        autofocus required>
+                        autofocus required readonly>
                 </div>
 
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="login_cad">Login:</label><br>
                     <input name="login_cad" id="login_cad" class="form-control" type="text" placeholder="Seu Login"
-                        required>
+                        required readonly>
                 </div>
 
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="email_cad">Email:</label><br>
                     <input name="email_cad" id="email_cad" class="form-control" type="text" placeholder="Seu Email"
-                        required>
+                        required readonly>
                 </div>
+
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="datanasc_cad">Data de Nascimento:</label><br>
-                    <input name="datanasc_cad" id="datanasc_cad" class="form-control" type="date" required>
+                    <input name="datanasc_cad" id="datanasc_cad" class="form-control" type="date" required readonly>
                 </div>
 
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="cpf_cad">CPF:</label><br>
                     <input name="cpf_cad" id="cpf_cad" class="form-control" type="number" placeholder="Seu CPF" required
-                        minlength="11" maxlength="11">
+                        minlength="11" maxlength="11" readonly>
                 </div>
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="tel_cad">Telefone:</label><br>
                     <input name="tel_cad" id="tel_cad" class="form-control" type="tel" placeholder="Seu Telefone"
-                        minlength="11" maxlength="11">
+                        minlength="11" maxlength="11" readonly>
                 </div>
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="end_cad">Endereço:</label><br>
                     <input name="end_cad" id="end_cad" class="form-control" type="text" placeholder="Seu Endereço"
-                        required>
+                        required readonly>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="cep_cad">CEP:</label><br>
                     <input name="cep_cad" id="cep_cad" class="form-control" type="number" placeholder="Seu CEP" required
-                        minlength="8" maxlength="8">
+                        minlength="8" maxlength="8" readonly>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="bairro_cad">Bairro:</label><br>
                     <input name="bairro_cad" id="bairro_cad" class="form-control" type="text" placeholder="Seu Bairro"
-                        required>
+                        required readonly>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="cidade_cad">Cidade:</label><br>
                     <input name="cidade_cad" id="cidade_cad" class="form-control" type="text" placeholder="Sua Cidade"
-                        required>
+                        required readonly>
                 </div>
 
 
-                <div class="">
-                    <a href="perfil-senha.html"><button type="button" class="btn btn-warning">Alterar Senha</button></a>
-                </div>
 
-                <div style="align-items: center;">
-                    <a href="perfil.html"> <input type="submit" class="btn btn-success" value="salvar"> </a>
-                    <a href="perfil.html"><button type="button" class="btn btn-danger">Cancelar</button></a>
-                </div>
             </div>
 
         </form>
-
+        <!--
+        <div class="row justify-content-center " style="align-items: center;">
+            <div class="ml-2">
+                <a href="perfil-editable.php"><button class="btn btn-primary" type="">Editar</button></a>
+            </div>
+            <button class="btn btn-danger ">Excluir</button>
+        </div>
+        -->
+        <div class="row justify-content-center">
+            <div class="mr-1">
+                <a href="perfil-editable-admin.php"><button class="btn btn-primary">Editar</button></a>
+            </div>
+            <div>
+                <button class="btn btn-danger ">Excluir</button>
+            </div>
+        </div>
     </div>
     <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
     <div class="imagemFundoBottom">
@@ -155,7 +164,7 @@
 
                 <div class="col hover" style="text-align: center; color: white; margin-top: 40px;">
                     <h1>Bibliotech</h1>
-                    <a href="equipe.html"><img src="img/team.png" alt="IconeTeam"></a>Conheça nossa equipe
+                    <a href="equipe.php"><img src="img/team.png" alt="IconeTeam"></a>Conheça nossa equipe
                 </div>
             </div>
         </div>

@@ -33,19 +33,19 @@
 
         <!-- Ícones -->
         <div id="icone-livro" class="hover">
-            <a href="ConsultarLivro.html"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
+            <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil.html"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
         </div>
         <div class="hover" id="icone-home">
-            <a href="inicial.html"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
+            <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
         </div>
         <div class="hover" id="icone-aluno">
-            <a href="perfil-aluno.html"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
+            <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
         </div>
     </div>
 
@@ -53,16 +53,16 @@
         <form action="" class="">
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b>Editar Senha Aluno</b></h1>
+                <h1 id="title"><b>Editar Senha</b></h1>
                 <hr>
             </div>
 
             <div class="row justify-content-center w-100">
 
                 <div class="form-group ">
-                    <label style="margin: auto;" for="senha_cad">Digite a senha do aluno:</label><br>
-                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="Nova senha"
-                        required="">
+                    <label style="margin: auto;" for="senha_cad">Digite sua senha atual:</label><br>
+                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="1234"
+                        required>
                 </div>
 
 
@@ -71,8 +71,8 @@
             <div class="row justify-content-center w-100">
                 <div class="form-group ">
                     <label style="margin: auto;" for="senha_cad">Digite a nova senha:</label><br>
-                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="Nova senha"
-                        required="">
+                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="1234"
+                        required>
                 </div>
             </div>
 
@@ -80,21 +80,22 @@
 
                 <div class="form-group">
                     <label style="margin: auto;" for="senha_cad">Confirmar senha:</label><br>
-                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="Nova senha"
-                        required="">
+                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="1234"
+                        required>
                 </div>
             </div>
+
             <div class="row justify-content-center container" style="align-items: center;">
                 <div class="mr-2">
-                    <a href="perfil-aluno.html"><input class="btn btn-success" type="submit" name="btnFinalizar"
-                            value="Atualizar"></a>
+                    <a href="perfil-admin.php"><input class="btn btn-success" type="submit" value="Atualizar"></a>
                 </div>
                 <div>
-                    <a href="perfil-editable-aluno.html"><button id="cancelar" type="button"
+                    <a href="perfil-editable-admin.php"><button id="cancelar" type="button"
                             class="btn btn-danger">Cancelar</button></a>
                 </div>
 
             </div>
+
         </form>
     </div>
     <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
@@ -122,7 +123,7 @@
 
                 <div class="col hover" style="text-align: center; color: white; margin-top: 40px;">
                     <h1>Bibliotech</h1>
-                    <a href="equipe.html"><img src="img/team.png" alt="IconeTeam"></a>Conheça nossa equipe
+                    <a href="equipe.php"><img src="img/team.png" alt="IconeTeam"></a>Conheça nossa equipe
                 </div>
             </div>
         </div>
