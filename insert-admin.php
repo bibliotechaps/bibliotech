@@ -16,7 +16,6 @@
 
     $sql = "insert into admin (nome, login, senha, email, telefone, dataNasc, cpf, cep, bairro, estado, cidade, endereco) values ('$nome','$login', '$senha','$email','$telefone','$dataNasc','$cpf','$cep','$bairro','$estado','$cidade','$endereco')";
     
-    echo "$sql";
 
     if ($conn->query($sql)) {
         echo "<script>alert('Registro inserido com sucesso!')</script>";

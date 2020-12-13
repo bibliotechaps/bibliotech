@@ -16,8 +16,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/arquivo1.css">
-    <!-- JS -->
-    <script type="text/javascript" src="js/arquivo-js.js"></script>
     <!-- JQuerry masks -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
@@ -50,7 +48,7 @@
             <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
         </div>
     </div>
-    <div class="container" id="menor">
+    <div class="container">
         <form method="POST" action="insert-admin.php">
 
             <div class="col-12 mb-2">
@@ -77,7 +75,7 @@
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="senha_cad2">Confirmar Senha:</label><br>
-                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234">
+                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234" required>
                 </div>
 
                 <div class="form-group  col-3">
@@ -87,7 +85,7 @@
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="tel_cad">Telefone:</label><br>
-                    <input name="telefone" id="telefone" class="form-control" type="tel" placeholder="Seu Telefone">
+                    <input name="telefone" id="telefone" class="form-control" type="tel" placeholder="Seu Telefone" required>
                 </div>
                 <!--  onkeypress="$(this).mask('(00) 90000-0000')" -->
                 <div class="form-group  col-3">
@@ -97,12 +95,12 @@
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="cpf_cad">CPF:</label><br>
-                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="Ex.: 000.000.000-00" >
+                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="Ex.: 000.000.000-00" required>
                 </div>
                 <!--  onkeypress="$(this).mask('000.000.000-00');"-->
                 <div class="form-group col-3">
                     <label style="margin: auto;" for="cep_cad">CEP:</label><br>
-                    <input name="cep" id="cep" type="text" class="form-control" placeholder="Seu CEP"   >
+                    <input name="cep" id="cep" type="text" class="form-control" placeholder="Seu CEP" required>
                 </div>
                 <!--  onkeypress="$(this).mask('00.000-000')" -->
                 <div class="form-group  col-3">
@@ -111,7 +109,36 @@
                 </div>
                 <div class="form-group col-3">
                     <label style="margin: auto;" for="pais_cad">Estado:</label><br>
-                    <input name="estado" id="estado" class="form-control" type="text" placeholder="Seu Estado" required>
+                    <!--<input name="estado" id="estado" class="form-control" type="text" placeholder="Seu Estado" required>-->
+                    <select name="estado" class="form-control" required>
+                        <option value="ac">Acre</option>
+                        <option value="al">Alagoas</option>
+                        <option value="ap">Amapá</option>
+                        <option value="am">Amazonas</option>
+                        <option value="ba">Bahia</option>
+                        <option value="ce">Ceará</option>
+                        <option value="df">Distrito Federal</option>
+                        <option value="es">Espirito Santo</option>
+                        <option value="go">Goiás</option>
+                        <option value="ma">Maranhão</option>
+                        <option value="mt">Mato Grosso</option>
+                        <option value="ms">Mato Grosso do Sul</option>
+                        <option value="mg">Minas Gerais</option>
+                        <option value="pa">Pará</option>
+                        <option value="pb">Paraíba </option>
+                        <option value="pr">Paraná</option>
+                        <option value="pe">Pernambuco </option>
+                        <option value="pi">Piauí</option>
+                        <option value="rj">Rio de Janeiro </option>
+                        <option value="rn">Rio Grande do NorteAlagoas</option>
+                        <option value="rs">Rio Grande do Sul</option>
+                        <option value="ro">Rondônia </option>
+                        <option value="rr">Roraima </option>
+                        <option value="sc">Santa Catarina Alagoas</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="se">Sergipe</option>
+                        <option value="to">Tocantins </option>
+                    </select>
                 </div>
                 <div class="form-group col-3">
                     <label style="margin: auto;" for="cidade_cad">Cidade:</label><br>
@@ -127,6 +154,20 @@
                 <div class="col-4">
                     <!-- só para identar -->
                 </div>
+                <script>
+                    var senha = document.getElementById("senha"), senha2 = document.getElementById("senha2");
+
+                    function validatePassword() {
+                        if (senha.value != senha2.value) {
+                            senha2.setCustomValidity("Senhas diferentes!");
+                        } else {
+                            senha2.setCustomValidity('');
+                        }
+                    }
+
+                    senha.onchange = validatePassword;
+                    senha2.onkeyup = validatePassword;
+                </script>
                 <div style="align-items: center;">
                     <input class="btn btn-success" type="submit" name="btnFinalizar" value="Finalizar">
                     <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
