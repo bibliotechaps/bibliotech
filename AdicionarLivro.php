@@ -22,6 +22,7 @@ include_once("conexao.php");
 
 </head>
 
+
 <body>
 
     <!--Div para a imagem de fundo de cima (ter em todos os códigos)-->
