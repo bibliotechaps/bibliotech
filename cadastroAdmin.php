@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="container">
-        <form method="POST" action="insert-admin.php">
+        <form method="POST" action="insert-admin.php" autocomplete="off">
 
             <div class="col-12 mb-2">
                 <h1 id="title"><b>Cadastrar Admin</b></h1>
@@ -59,56 +59,49 @@
             <div class="row justify-content-around p-3 w-100 m-0">
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="nome_cad">Nome:</label><br>
-                    <input name="nome" id="nome" class="form-control" type="text" placeholder="Seu nome" autofocus required>
+                    <label style="margin: auto;" for="nome">Nome:</label><br>
+                    <input name="nome" class="form-control" type="text" placeholder="Seu nome" autofocus required>
+                </div>
+
+                <div class="form-group  col-3" id="resposta1">
+                    <label style="margin: auto;" for="login">Login:</label><br>
+                    <input name="login" class="form-control" type="text" placeholder="Seu Login" required>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="login_cad">Login:</label><br>
-                    <input name="login" id="login" class="form-control" type="text" placeholder="Seu Login" required>
-                </div>
-
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="senha_cad">Senha:</label><br>
+                    <label style="margin: auto;" for="senha">Senha:</label><br>
                     <input name="senha" id="senha" class="form-control" type="password" placeholder="1234" required>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="senha_cad2">Confirmar Senha:</label><br>
+                    <label style="margin: auto;" for="senha2">Confirmar Senha:</label><br>
                     <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234" required>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="email_cad">Email:</label><br>
-                    <input name="email" id="email" class="form-control" type="text" placeholder="Seu Email" required>
+                    <label style="margin: auto;" for="email">Email:</label><br>
+                    <input name="email" class="form-control" type="text" placeholder="Seu Email" required>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="tel_cad">Telefone:</label><br>
-                    <input name="telefone" id="telefone" class="form-control" type="tel" placeholder="Seu Telefone" required>
+                    <label style="margin: auto;" for="telefone">Telefone:</label><br>
+                    <input name="telefone" class="form-control" type="tel" placeholder="Seu Telefone" required onkeypress="$(this).mask('(00) 90000-0000')">
                 </div>
-                <!--  onkeypress="$(this).mask('(00) 90000-0000')" -->
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="datanasc_cad">Data de Nascimento:</label><br>
-                    <input name="dataNasc" id="dataNasc" class="form-control" type="date" required>
+                    <label style="margin: auto;" for="dataNasc">Data de Nascimento:</label><br>
+                    <input name="dataNasc" class="form-control" type="date" required>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cpf_cad">CPF:</label><br>
-                    <input name="cpf" id="cpf" type="text" class="form-control" placeholder="Ex.: 000.000.000-00" required>
-                </div>
-                <!--  onkeypress="$(this).mask('000.000.000-00');"-->
-                <div class="form-group col-3">
-                    <label style="margin: auto;" for="cep_cad">CEP:</label><br>
-                    <input name="cep" id="cep" type="text" class="form-control" placeholder="Seu CEP" required>
-                </div>
-                <!--  onkeypress="$(this).mask('00.000-000')" -->
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="bairro_cad">Bairro:</label><br>
-                    <input name="bairro" id="bairro" class="form-control" type="text" placeholder="Seu Bairro" required>
+                    <label style="margin: auto;" for="cpf">CPF:</label><br>
+                    <input name="cpf" type="text" class="form-control" placeholder="Ex.: 000.000.000-00" required onkeypress="$(this).mask('000.000.000-00');">
                 </div>
                 <div class="form-group col-3">
-                    <label style="margin: auto;" for="pais_cad">Estado:</label><br>
+                    <label style="margin: auto;" for="cep">CEP:</label><br>
+                    <input name="cep" type="text" class="form-control" placeholder="Seu CEP" required onkeypress="$(this).mask('00.000-000')">
+                </div>
+                <div class="form-group col-3">
+                    <label style="margin: auto;" for="name">Estado:</label><br>
                     <!--<input name="estado" id="estado" class="form-control" type="text" placeholder="Seu Estado" required>-->
                     <select name="estado" class="form-control" required>
                         <option value="ac">Acre</option>
@@ -141,21 +134,27 @@
                     </select>
                 </div>
                 <div class="form-group col-3">
-                    <label style="margin: auto;" for="cidade_cad">Cidade:</label><br>
-                    <input name="cidade" id="cidade" class="form-control" type="text" placeholder="Sua Cidade" required>
+                    <label style="margin: auto;" for="cidade">Cidade:</label><br>
+                    <input name="cidade" class="form-control" type="text" placeholder="Sua Cidade" required>
+                </div>
+                <div class="form-group  col-3">
+                    <label style="margin: auto;" for="bairro">Bairro:</label><br>
+                    <input name="bairro" class="form-control" type="text" placeholder="Seu Bairro" required>
                 </div>
                 <div class="col-4">
                     <!-- só para identar -->
                 </div>
                 <div class="form-group  col-4">
-                    <label style="margin: auto;" for="end_cad">Endereço:</label><br>
-                    <input name="endereco" id="endereco" class="form-control" type="text" placeholder="Seu Endereço" required>
+                    <label style="margin: auto;" for="endereco">Endereço:</label><br>
+                    <input name="endereco" class="form-control" type="text" placeholder="Nome da rua e número da casa" required>
                 </div>
                 <div class="col-4">
                     <!-- só para identar -->
                 </div>
                 <script>
-                    var senha = document.getElementById("senha"), senha2 = document.getElementById("senha2");
+                    //verifica se as senhas são iguais
+                    var senha = document.getElementById("senha"),
+                        senha2 = document.getElementById("senha2");
 
                     function validatePassword() {
                         if (senha.value != senha2.value) {

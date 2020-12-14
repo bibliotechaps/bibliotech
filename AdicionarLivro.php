@@ -17,7 +17,8 @@ include_once("conexao.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <!-x- JQuerry masks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 
 </head>
@@ -69,13 +70,13 @@ include_once("conexao.php");
             <div class="row justify-content-md-center ">
                 <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
                     <label style="margin: auto;" for="titulo">Título:</label>
-                    <input type="text" name="titulo" id="titulo" placeholder="Título do livro:" class="form-control" autofocus required>
+                    <input type="text" name="titulo" placeholder="Título do livro:" class="form-control" autofocus required>
                 </div>
 
                 <div class="form-group col-auto col-6
                             col-lg-4 
                             col-xl-3">
-                    <label for="autor" class="control-label" style="margin: auto;">Autor:</label>
+                    <label for="autor_id" class="control-label" style="margin: auto;">Autor:</label>
                     <select name="autor_id" class="form-control" required>
                         <?php
                         $result_niveis_autor = "SELECT * FROM autor";
@@ -83,7 +84,7 @@ include_once("conexao.php");
                         while ($row_niveis_autor = mysqli_fetch_assoc($resultado_niveis_autor)) { ?>
                             <option value="<?php echo $row_niveis_autor['id']; ?>"><?php echo $row_niveis_autor['nome']; ?>
                             </option><?php
-                                    }  
+                                    }
                                         ?>
                     </select>
                 </div>
@@ -91,7 +92,7 @@ include_once("conexao.php");
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
-                    <label for="editora" class="control-label" style="margin: auto;">Editora:</label>
+                    <label for="editora_id" class="control-label" style="margin: auto;">Editora:</label>
                     <select name="editora_id" class="form-control" required>
                         <?php
                         $result_niveis_editora = "SELECT * FROM editora";
@@ -113,21 +114,21 @@ include_once("conexao.php");
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="anoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="anoEdicao" id="anoEdicao" placeholder="Ano de edição:" class="form-control" required>
+                    <input type="number" name="anoEdicao" placeholder="Ano de edição:" class="form-control" required onkeypress="$(this).mask('0000')" >
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="numPaginas">Número de Páginas:</label> <br>
-                    <input type="number" name="numPaginas" id="numPaginas" placeholder="Número de páginas:" class="form-control" required>
+                    <input type="number" name="numPaginas" id="numPaginas" placeholder="Número de páginas:" class="form-control" required onkeypress="$(this).mask('0000')">
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="volume">Volume:</label> <br>
-                    <input type="number" name="volume" id="volume" placeholder="Informe o volume:" class="form-control" required>
+                    <input type="number" name="volume" placeholder="Informe o volume:" class="form-control" required onkeypress="$(this).mask('00')">
                 </div>
             </div>
 
@@ -137,7 +138,7 @@ include_once("conexao.php");
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="isbn">ISBN:</label> <br>
-                    <input type="text" name="isbn" id="isbn" placeholder="Informe o ISBN do livro:" class="form-control" required>
+                    <input type="text" name="isbn" placeholder="Informe o ISBN do livro:" class="form-control" required onkeypress="$(this).mask('000-00-000-0000-0')">
                 </div>
 
             </div>
