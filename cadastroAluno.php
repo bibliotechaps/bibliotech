@@ -57,7 +57,7 @@
 
         <div class="form-group col-auto w-25">
           <label for="nometxtaluno">Nome:</label> <br>
-          <input type="text" id="nometxtaluno" class="form-control" placeholder="Nome do Aluno" required="">
+          <input type="text" name="nometxtaluno" class="form-control" placeholder="Nome do Aluno" required="">
         </div>
 
         <div class="form-group col-auto w-25">
