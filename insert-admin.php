@@ -12,9 +12,10 @@ $bairro = $_POST["bairro"];
 $estado = $_POST["estado"];
 $cidade = $_POST["cidade"];
 $endereco = $_POST["endereco"];
+$limiteEmprestimo = 5;
 
 
-$sql = "insert into admin (nome, login, senha, email, telefone, dataNasc, cpf, cep, bairro, estado, cidade, endereco) values ('$nome','$login', '$senha','$email','$telefone','$dataNasc','$cpf','$cep','$bairro','$estado','$cidade','$endereco')";
+$sql = "insert into admin (nome, login, senha, email, telefone, dataNasc, cpf, cep, bairro, estado, cidade, endereco, limiteEmprestimo) values ('$nome','$login', '$senha','$email','$telefone','$dataNasc','$cpf','$cep','$bairro','$estado','$cidade','$endereco', '$limiteEmprestimo')";
 
 
 if ($conn->query($sql)) {
@@ -31,7 +32,7 @@ if ($conn->query($sql)) {
 
     <script>
         alert('Erro ao inserir o registro!');
-        window.location = 'cadastro-admin.php';
+        window.location = 'cadastroAdmin.php';
     </script>
 
 <?php
