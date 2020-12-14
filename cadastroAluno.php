@@ -49,7 +49,7 @@
   </div>
   <div class="container" id="menor">
 
-    <form name="CadastroAluno" action="inserirAluno.php" method="POST" style="padding: 20px; align-content: center; ">
+    <form name="CadastroAluno" action="insert-aluno.php" method="POST" style="padding: 20px; align-content: center; ">
 
       <div class="row justify-content-around">
         <h1 id="title"><b>Cadastrar Aluno </b></h1>
