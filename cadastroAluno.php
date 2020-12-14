@@ -6,6 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="widht= device-widht, initial-scale = 1.0">
   <title>Cadastro Aluno</title>
+  <s></s>
+
+  
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
