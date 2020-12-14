@@ -172,7 +172,7 @@
                     senha2.onkeyup = validatePassword;
                 </script>
                 <div style="align-items: center;">
-                    <input class="btn btn-success" type="submit" name="btnFinalizar" value="Finalizar">
+                    <input class="btn btn-success" type="submit" name="btnCadastrar" value="Cadastrar">
                     <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                 </div>
             </div>

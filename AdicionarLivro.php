@@ -147,7 +147,7 @@ include_once("conexao.php");
             <div class="row justify-content-md-center">
 
                 <div style="align-items: center;">
-                    <input type="submit" class="btn btn-success" name="btnAdicionar" value="Finalizar">
+                    <input type="submit" class="btn btn-success" name="btnAdicionar" value="Adicionar">
                     <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                 </div>
 
