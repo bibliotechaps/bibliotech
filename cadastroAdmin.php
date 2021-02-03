@@ -36,7 +36,9 @@
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                            echo $_SESSION['login'];
+                                                                                                            ?>
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -174,7 +176,7 @@
             </div>
 
             <div class="mb-4 mr-5 mt-4">
-                <h6 style="text-align-last: right; font-size:small; ">Você já é um Admin? <a class="mt-3" href="logAdmin"> Clique aqui!</a></h6>
+                <h6 style="text-align-last: right; font-size:small; ">Você já é um Admin? <a class="mt-3" href="login-admin.php"> Clique aqui!</a></h6>
             </div>
         </form>
     </div>

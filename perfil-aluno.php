@@ -35,7 +35,9 @@
       <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
     </div>
     <div id="icone-perfil" class="hover">
-      <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+      <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                    echo $_SESSION['login'];
+                                                                                                    ?>
     </div>
     <div id="icone-sair" class="hover">
       <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -56,8 +58,7 @@
 
           <div class="form-group col-auto w-25">
             <label for="nascdatealuno">Data de Nascimento:</label> <br>
-            <input type="date" id="nascdatealuno" class="form-control" placeholder="Data de Nascimento do Aluno"
-              required="" disabled>
+            <input type="date" id="nascdatealuno" class="form-control" placeholder="Data de Nascimento do Aluno" required="" disabled>
           </div>
 
           <div class="form-group col-auto w-25">
@@ -67,32 +68,27 @@
 
           <div class="form-group col-auto w-25">
             <label for="CPFnumberaluno">CPF:</label> <br>
-            <input type="number" id="CPFnumberaluno" class="form-control" placeholder="CPF do Aluno" required=""
-              disabled>
+            <input type="number" id="CPFnumberaluno" class="form-control" placeholder="CPF do Aluno" required="" disabled>
           </div>
 
           <div class="form-group col-auto w-25">
             <label for="telefonenumberaluno">Telefone:</label> <br>
-            <input type="number" id="telefonenumberaluno" class="form-control" placeholder="Telefone do Aluno"
-              required="" disabled>
+            <input type="number" id="telefonenumberaluno" class="form-control" placeholder="Telefone do Aluno" required="" disabled>
           </div>
 
           <div class="form-group col-auto w-25">
             <label for="enderecotxtaluno">Endereço:</label> <br>
-            <input type="text" id="enderecotxtaluno" class="form-control" placeholder="Endereço do Aluno" required=""
-              disabled>
+            <input type="text" id="enderecotxtaluno" class="form-control" placeholder="Endereço do Aluno" required="" disabled>
           </div>
 
           <div class="form-group col-auto w-25">
             <label for="bairrotxtaluno">Bairro:</label> <br>
-            <input type="text" id="bairrotxtaluno" class="form-control" placeholder="Bairro do Aluno" required=""
-              disabled>
+            <input type="text" id="bairrotxtaluno" class="form-control" placeholder="Bairro do Aluno" required="" disabled>
           </div>
 
           <div class="form-group col-auto w-25">
             <label for="cidadetxtaluno">Cidade:</label> <br>
-            <input type="text" id="cidadetxtaluno" class="form-control" placeholder="Cidade do Aluno" required=""
-              disabled>
+            <input type="text" id="cidadetxtaluno" class="form-control" placeholder="Cidade do Aluno" required="" disabled>
           </div>
 
 
@@ -109,14 +105,12 @@
 
           <div class="form-group col-4">
             <label for="logintxtaluno">Login:</label> <br>
-            <input type="text" id="logintxtaluno" class="form-control" placeholder="Login do Aluno" required=""
-              disabled>
+            <input type="text" id="logintxtaluno" class="form-control" placeholder="Login do Aluno" required="" disabled>
           </div>
 
           <div class="form-group col-4">
             <label for="Emailtxtaluno">Endereço de Email:</label><br>
-            <input type="text" id="Emailtxtaluno" class="form-control" placeholder="Endereço de Email do Aluno"
-              required="" disabled>
+            <input type="text" id="Emailtxtaluno" class="form-control" placeholder="Endereço de Email do Aluno" required="" disabled>
           </div>
 
           <div style="align-items: center;">
@@ -138,8 +132,7 @@
               <h1>Contate-nos</h1>
             </div>
             <div style="color:white" class="hover">
-              <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png"
-                  alt="iconeInsta"></a>Instagram
+              <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png" alt="iconeInsta"></a>Instagram
             </div>
             <div style="color:white">
               <img src="img/mail.png" alt="iconeMail">bibliotech@outlook.com.br

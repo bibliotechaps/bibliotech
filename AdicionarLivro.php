@@ -18,7 +18,7 @@ include_once("conexao.php");
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-x- JQuerry masks -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 
 </head>
@@ -40,7 +40,9 @@ include_once("conexao.php");
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                            echo $_SESSION['login'];
+                                                                                                            ?>
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -114,7 +116,7 @@ include_once("conexao.php");
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="anoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="anoEdicao" placeholder="Ano de edição:" class="form-control" required onkeypress="$(this).mask('0000')" >
+                    <input type="number" name="anoEdicao" placeholder="Ano de edição:" class="form-control" required onkeypress="$(this).mask('0000')">
                 </div>
 
                 <div class="form-group col-auto col-6

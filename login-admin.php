@@ -2,15 +2,14 @@
 <html lang="en">
 <?php
 session_start();
-include('verifica_login.php');
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Incial</title>
+    <title>Login Admin</title>
 
-    <!-- Latest compiled and minified CSS-->
+    <!-- Latest compiled and minified CSS (ter em todos os códigos)-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,7 +25,7 @@ include('verifica_login.php');
 </head>
 
 <body>
-    <!-- div para barra de configurações(ter em todos os codigos) -->
+    <!-- div para barra de configurações(ter em todos os códigos)-->
     <div class="imagemFundoTop">
         <!--<img src="img/fundo-cinza.png" alt="Imagem de Fundo" width=100% height=75px>-->
 
@@ -35,55 +34,43 @@ include('verifica_login.php');
             <h1 id="bibliotech-name">BiblioTech</h1>
         </div>
 
-        <!-- Ícones -->
-        <div id="icone-livro" class="hover">
-            <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
-        </div>
-        <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
-                                                                                                            echo $_SESSION['login'];
-                                                                                                            ?>
-        </div>
-        <div id="icone-sair" class="hover">
-            <a href="logout.php"><img src="img/logout.png" alt="imagem login" title="Sair"></a>Sair
-        </div>
-        <div class="hover" id="icone-home">
-            <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
-        </div>
-        <div class="hover" id="icone-aluno">
-            <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
-        </div>
-
     </div>
-    <div class="geral" id="menor">
-        <!--Título-->
-        <div class="col-12 mb-2">
-            <h1 id="title"><b>Página Inicial</b></h1>
-            <hr>
-        </div>
 
-        <div class="align-text-center">
-            <h4 id="title">Bem vindo, <?php
-                                        echo $_SESSION['login'];
-                                        ?></h4>
-        </div>
+    <div class="container " id="menor">
+        <form action="login.php" method="POST">
+            <!--Título-->
+            <div class="col-12 mb-2">
+                <h1 id="title"><b>Login Admin</b></h1>
 
-        <div class="container">
-            <a href="CadastroAdmin.php" class="hover"><img src="img/add.png" alt="Cadastro Admin"></a> Cadastro Admin
+            </div>
+            <div class="card align-items-center" style="background-color: #D3D3D3;">
+                <br>
+                <?php
+                if(isset($_SESSION['nao_autenticado'])):
+                ?>
+                <div class="w-25">
+                    <input class="btn btn-danger w-100" type="button" disabled value="ERRO: login ou senha inválidos.">
+                </div>
+                <?php
+                endif;
+                unset($_SESSION['nao_autenticado']); 
+                ?>
+                <br>
+                <div class="form-group w-25">
+                    <label style="margin: auto;" for="login">Login:</label><br>
+                    <input name="login" id="login" class="form-control" type="text" placeholder="Seu Login" required>
+                </div>
+                <br>
+                <div class="form-group w-25">
+                    <label style="margin: auto;" for="senha">Senha:</label><br>
+                    <input name="senha" id="senha" class="form-control" type="password" placeholder="Sua Senha" required>
+                </div>
+                <br>
+                <input class="btn btn-primary w-25" type="submit" name="btnCadastrar" value="Entrar">
+                <br>
+            </div>
 
-        </div>
-        <br>
-        <div class="container">
-            <a href="cadastroAluno.php" class="hover"><img src="img/add.png" alt="Cadastro Aluno"></a> Cadastro Aluno
-
-        </div>
-        <br>
-        <div class="container">
-            <a href="adicionarLivro.php" class="hover"><img src="img/book.png" alt="Adcionar Livro"></a> Adicionar
-            Livro
-
-        </div>
-        <br>
+        </form>
     </div>
     <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
     <div class="imagemFundoBottom">

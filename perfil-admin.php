@@ -36,7 +36,9 @@
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                            echo $_SESSION['login'];
+                                                                                                            ?>
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -50,7 +52,7 @@
     </div>
 
     <div class="container" id="menor">
-        <form method="POST">
+        <form method="POST" action="consultar-admin.php">
 
             <!--Título-->
             <div class="col-12 mb-2">
@@ -62,20 +64,17 @@
 
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="nome_cad">Nome:</label><br>
-                    <input name="nome_cad" id="nome_cad" class="form-control" type="text" placeholder="Seu nome"
-                        autofocus required readonly>
+                    <input name="nome_cad" id="nome_cad" class="form-control" type="text" placeholder="Seu nome" autofocus required readonly>
                 </div>
 
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="login_cad">Login:</label><br>
-                    <input name="login_cad" id="login_cad" class="form-control" type="text" placeholder="Seu Login"
-                        required readonly>
+                    <input name="login_cad" id="login_cad" class="form-control" type="text" placeholder="Seu Login" required readonly>
                 </div>
 
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="email_cad">Email:</label><br>
-                    <input name="email_cad" id="email_cad" class="form-control" type="text" placeholder="Seu Email"
-                        required readonly>
+                    <input name="email_cad" id="email_cad" class="form-control" type="text" placeholder="Seu Email" required readonly>
                 </div>
 
                 <div class="form-group  col-4">
@@ -85,36 +84,30 @@
 
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="cpf_cad">CPF:</label><br>
-                    <input name="cpf_cad" id="cpf_cad" class="form-control" type="number" placeholder="Seu CPF" required
-                        minlength="11" maxlength="11" readonly>
+                    <input name="cpf_cad" id="cpf_cad" class="form-control" type="number" placeholder="Seu CPF" required minlength="11" maxlength="11" readonly>
                 </div>
                 <div class="form-group  col-4">
                     <label style="margin: auto;" for="tel_cad">Telefone:</label><br>
-                    <input name="tel_cad" id="tel_cad" class="form-control" type="tel" placeholder="Seu Telefone"
-                        minlength="11" maxlength="11" readonly>
+                    <input name="tel_cad" id="tel_cad" class="form-control" type="tel" placeholder="Seu Telefone" minlength="11" maxlength="11" readonly>
                 </div>
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="end_cad">Endereço:</label><br>
-                    <input name="end_cad" id="end_cad" class="form-control" type="text" placeholder="Seu Endereço"
-                        required readonly>
+                    <input name="end_cad" id="end_cad" class="form-control" type="text" placeholder="Seu Endereço" required readonly>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="cep_cad">CEP:</label><br>
-                    <input name="cep_cad" id="cep_cad" class="form-control" type="number" placeholder="Seu CEP" required
-                        minlength="8" maxlength="8" readonly>
+                    <input name="cep_cad" id="cep_cad" class="form-control" type="number" placeholder="Seu CEP" required minlength="8" maxlength="8" readonly>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="bairro_cad">Bairro:</label><br>
-                    <input name="bairro_cad" id="bairro_cad" class="form-control" type="text" placeholder="Seu Bairro"
-                        required readonly>
+                    <input name="bairro_cad" id="bairro_cad" class="form-control" type="text" placeholder="Seu Bairro" required readonly>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="cidade_cad">Cidade:</label><br>
-                    <input name="cidade_cad" id="cidade_cad" class="form-control" type="text" placeholder="Sua Cidade"
-                        required readonly>
+                    <input name="cidade_cad" id="cidade_cad" class="form-control" type="text" placeholder="Sua Cidade" required readonly>
                 </div>
 
 
@@ -148,8 +141,7 @@
                         <h1>Contate-nos</h1>
                     </div>
                     <div style="color:white" class="hover">
-                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png"
-                                alt="iconeInsta"></a>Instagram
+                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png" alt="iconeInsta"></a>Instagram
                     </div>
                     <div style="color:white">
                         <img src="img/mail.png" alt="iconeMail">bibliotech@outlook.com.br

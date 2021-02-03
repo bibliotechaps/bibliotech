@@ -35,7 +35,9 @@
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                            echo $_SESSION['login'];
+                                                                                                            ?>
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -79,8 +81,7 @@
                             col-lg-4 
                             col-xl-3">
                     <label style="margin: auto;" for="txtEditora">Editora:</label> <br>
-                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Pedro" class="form-control"
-                        readonly>
+                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Pedro" class="form-control" readonly>
                 </div>
             </div>
 
@@ -92,16 +93,14 @@
                             col-lg-4 
                             col-xl-3">
                     <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="2020" class="form-control"
-                        readonly>
+                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="2020" class="form-control" readonly>
                 </div>
 
                 <div class="form-group col-auto col-6
                             col-lg-4 
                             col-xl-3">
                     <label style="margin: auto;" for="IntNumeroPag">Número de Páginas:</label> <br>
-                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="500" class="form-control"
-                        readonly>
+                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="500" class="form-control" readonly>
                 </div>
 
                 <div class="form-group col-auto col-6
@@ -159,8 +158,7 @@
                         <h1>Contate-nos</h1>
                     </div>
                     <div style="color:white" class="hover">
-                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png"
-                                alt="iconeInsta"></a>Instagram
+                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png" alt="iconeInsta"></a>Instagram
                     </div>
                     <div style="color:white">
                         <img src="img/mail.png" alt="iconeMail">bibliotech@outlook.com.br

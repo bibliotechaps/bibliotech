@@ -36,7 +36,9 @@
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                            echo $_SESSION['login'];
+                                                                                                            ?>
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -66,24 +68,21 @@
             <div class="row justify-content-md-center ">
                 <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
                     <label style="margin: auto;" for="txtTitulo">Título:</label>
-                    <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Nome do livro:" class="form-control"
-                        autofocus required>
+                    <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Nome do livro:" class="form-control" autofocus required>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtAutor">Autor:</label> <br>
-                    <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor do livro:" class="form-control"
-                        required>
+                    <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor do livro:" class="form-control" required>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtEditora">Editora:</label> <br>
-                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Editora do livro:"
-                        class="form-control" required>
+                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Editora do livro:" class="form-control" required>
                 </div>
             </div>
 
@@ -95,24 +94,21 @@
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:"
-                        class="form-control" required>
+                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="IntNumeroPag">Número de Páginas:</label> <br>
-                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:"
-                        class="form-control" required>
+                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:" class="form-control" required>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="Volume">Volume:</label> <br>
-                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control"
-                        required>
+                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required>
                 </div>
             </div>
 
@@ -122,12 +118,11 @@
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
-                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:"
-                        class="form-control" required>
+                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required>
                 </div>
 
             </div>
-            
+
 
             <div class="row justify-content-md-center">
                 <div style="align-items: center;">
@@ -173,8 +168,7 @@
                         <h1>Contate-nos</h1>
                     </div>
                     <div style="color:white" class="hover">
-                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png"
-                                alt="iconeInsta"></a>Instagram
+                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png" alt="iconeInsta"></a>Instagram
                     </div>
                     <div style="color:white">
                         <img src="img/mail.png" alt="iconeMail">bibliotech@outlook.com.br
