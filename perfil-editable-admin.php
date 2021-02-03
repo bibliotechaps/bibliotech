@@ -62,6 +62,8 @@ session_start();
                 <h1 id="title"><b>Perfil do Admin</b></h1>
                 <hr>
             </div>  
+
+
             
 
             <div class="row justify-content-around p-3 w-100 m-0">
