@@ -36,7 +36,7 @@ session_start();
 
     </div>
 
-    <div class="container " id="menor">
+    <div class="container"  style="width: 50%;">
         <form action="login.php" method="POST">
             <!--Título-->
             <div class="col-12 mb-2">
@@ -46,32 +46,43 @@ session_start();
             <div class="card align-items-center" style="background-color: #D3D3D3;">
                 <br>
                 <?php
-                if(isset($_SESSION['nao_autenticado'])):
+                if (isset($_SESSION['nao_autenticado'])) :
                 ?>
-                <div class="w-25">
-                    <input class="btn btn-danger w-100" type="button" disabled value="ERRO: login ou senha inválidos.">
-                </div>
+                    <div class="">
+                        <input class="btn btn-danger w-100" type="button" disabled value="ERRO: login ou senha inválidos.">
+                    </div>
                 <?php
                 endif;
-                unset($_SESSION['nao_autenticado']); 
+                unset($_SESSION['nao_autenticado']);
                 ?>
                 <br>
-                <div class="form-group w-25">
+                <div class="form-group w-50">
                     <label style="margin: auto;" for="login">Login:</label><br>
                     <input name="login" id="login" class="form-control" type="text" placeholder="Seu Login" required>
                 </div>
                 <br>
-                <div class="form-group w-25">
+                <div class="form-group w-50">
                     <label style="margin: auto;" for="senha">Senha:</label><br>
                     <input name="senha" id="senha" class="form-control" type="password" placeholder="Sua Senha" required>
                 </div>
+                
                 <br>
-                <input class="btn btn-primary w-25" type="submit" name="btnCadastrar" value="Entrar">
+                <input class="btn btn-primary w-50" type="submit" name="btnCadastrar" value="Entrar">
+                
+
+                <br>
+                <hr noshade=”noshade” width="15%" size="20px">
+                <div>
+                <a href="cadastroAdmin.php"><button class="btn btn-success w-100" type="button" name="btnCadastrar" >Criar Conta</button></a>
+                </div>
                 <br>
             </div>
 
+
         </form>
     </div>
+    <br>
+    <br>
     <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
     <div class="imagemFundoBottom">
         <div class="container">

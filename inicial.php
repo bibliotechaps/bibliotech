@@ -68,10 +68,6 @@ include('verifica_login.php');
                                         ?></h4>
         </div>
 
-        <div class="container">
-            <a href="CadastroAdmin.php" class="hover"><img src="img/add.png" alt="Cadastro Admin"></a> Cadastro Admin
-
-        </div>
         <br>
         <div class="container">
             <a href="cadastroAluno.php" class="hover"><img src="img/add.png" alt="Cadastro Aluno"></a> Cadastro Aluno

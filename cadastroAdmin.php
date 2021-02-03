@@ -34,24 +34,6 @@ session_start();
             <h1 id="bibliotech-name">BiblioTech</h1>
         </div>
 
-        <!-- Ícones -->
-        <div id="icone-livro" class="hover">
-            <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
-        </div>
-        <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
-                                                                                                            echo $_SESSION['login'];
-                                                                                                            ?>
-        </div>
-        <div id="icone-sair" class="hover">
-            <img src="img/logout.png" alt="imagem login" title="Sair">Sair
-        </div>
-        <div class="hover" id="icone-home">
-            <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
-        </div>
-        <div class="hover" id="icone-aluno">
-            <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
-        </div>
     </div>
     <div class="container">
         <form method="POST" action="insert-admin.php" autocomplete="off">
@@ -75,12 +57,12 @@ session_start();
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="senha">Senha:</label><br>
-                    <input name="senha" id="senha" class="form-control" type="password" placeholder="1234" required>
+                    <input name="senha" id="senha" class="form-control" type="password" placeholder="Sua Senha" required>
                 </div>
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="senha2">Confirmar Senha:</label><br>
-                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234" required>
+                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="Repita Sua Senha" required>
                 </div>
 
                 <div class="form-group  col-3">
@@ -177,10 +159,7 @@ session_start();
                     <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                 </div>
             </div>
-
-            <div class="mb-4 mr-5 mt-4">
-                <h6 style="text-align-last: right; font-size:small; ">Você já é um Admin? <a class="mt-3" href="login-admin.php"> Clique aqui!</a></h6>
-            </div>
+                    <br>
         </form>
     </div>
     <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
