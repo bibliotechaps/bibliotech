@@ -12,13 +12,27 @@
     $sql = "insert into livro (titulo, autor_id, editora_id, anoEdicao, numPaginas, volume, isbn) values ('$titulo','$autor_id', '$editora_id','$anoEdicao','$numPaginas','$volume','$isbn')";
     //
     //
-    echo "$sql";
+    //echo "$sql";
 
-    if ($conn->query($sql)) {
-        echo "<script>alert('Registro inserido com sucesso!')</script>";
+    if ($conn->query($sql) === TRUE) {
+        ?>
+
+        <script>
+        alert("Registro inserido com sucesso!");
+        window.location = "consultar-livro.php";
+        </script>
+
+        <?php
     }
     else {
-        echo "<script>alert('Erro ao inserir o registro!')</script>";
+        ?>
+
+        <script>
+        alert("Erro ao inserir o registro!");
+        window.history.back();
+        </script>
+
+        <?php
     }
 
 ?>

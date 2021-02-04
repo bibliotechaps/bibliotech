@@ -58,7 +58,7 @@ else {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Livro</title>
+    <title>Dados do Livro</title>
 
     <link rel="stylesheet" href="css/arquivo1.css">
     <!-- Latest compiled and minified CSS -->
@@ -120,7 +120,7 @@ else {
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Editar Livro </b></h1>
+                <h1 id="title"><b> Dados do Livro </b></h1>
                 <hr>
             </div>
 
@@ -129,21 +129,21 @@ else {
             <div class="row justify-content-md-center ">
                 <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
                     <label style="margin: auto;" for="txtTitulo">Título:</label>
-                    <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Nome do livro:" class="form-control" autofocus required value="<?php echo $livro['titulo'] ?>">
+                    <input type="text" name="txtTitulo" id="txtTitulo" placeholder="Nome do livro:" class="form-control" autofocus required value="<?php echo $livro['titulo'] ?>" readonly>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtAutor">Autor:</label> <br>
-                    <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor do livro:" class="form-control" required value="<?php echo $livro['autor_id'] ?>">
+                    <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor do livro:" class="form-control" required value="<?php echo $livro['autor_id'] ?>" readonly>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtEditora">Editora:</label> <br>
-                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Editora do livro:" class="form-control" required value="<?php echo $livro['editora_id'] ?>">
+                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Editora do livro:" class="form-control" required value="<?php echo $livro['editora_id'] ?>" readonly>
                 </div>
             </div>
 
@@ -155,21 +155,21 @@ else {
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required value="<?php echo $livro['anoEdicao'] ?>">
+                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required value="<?php echo $livro['anoEdicao'] ?>" readonly>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="IntNumeroPag">Número de Páginas:</label> <br>
-                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:" class="form-control" required value="<?php echo $livro['numPaginas'] ?>">
+                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:" class="form-control" required value="<?php echo $livro['numPaginas'] ?>" readonly>
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="Volume">Volume:</label> <br>
-                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required value="<?php echo $livro['volume'] ?>">
+                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required value="<?php echo $livro['volume'] ?>" readonly>
                 </div>
             </div>
 
@@ -179,7 +179,7 @@ else {
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
-                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required value="<?php echo $livro['isbn'] ?>">
+                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required value="<?php echo $livro['isbn'] ?>" readonly>
                 </div>
 
             </div>
@@ -187,8 +187,8 @@ else {
 
             <div class="row justify-content-md-center">
                 <div style="align-items: center;">
-                    <input type="submit" class="btn btn-success" value="salvar">
-                    <a href="consultar-livro.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                   
+                    <a href="consultar-livro.php"><button type="button" class="btn btn-danger">Voltar</button></a>
                 </div>
             </div>
 
