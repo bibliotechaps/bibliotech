@@ -1,6 +1,8 @@
 <?php
-session_start();
+    session_start();
+    include_once('conexao.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +21,27 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
+<style>
+    table, td, th{
+        border: 1px solid black;
+        padding: 5px;
+        
+    }
 
+    table{
+        width: 100%
+        
+    }
+</style>
+
+<script>
+    function confirmarExclusao(id, tt){
+        if(window.confirm("Deseja realmente apagar o registro:\n" + id + "-" + tt)){
+            window.location = "excluir-livro.php?id=" + id;
+        }
+    }
+
+</script>
 </head>
 
 <body>
@@ -38,9 +60,7 @@ session_start();
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
-                                                                                                            echo $_SESSION['login'];
-                                                                                                            ?>
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
         </div>
         <div id="icone-sair" class="hover">
             <img src="img/logout.png" alt="imagem login" title="Sair">Sair
@@ -55,98 +75,66 @@ session_start();
 
 
     <div class="container" id="menor">
-        <form method="post" autocomplete="on">
+        <?php
+            //comando sql para selecionar as pessoas cadastradas
+            $sql = "SELECT * FROM bibliotech.livro order by titulo";
+            //executar o comando sql
+            $dadosLivros = $conn->query($sql);
+            if ($dadosLivros->num_rows > 0){
+                ?>
 
-
-
-            <!--Título-->
+                <!--Título-->
             <div class="col-12 mb-2">
                 <h1 id="title"><b> Consultar Livro </b></h1>
                 <hr>
             </div>
 
+             <table>
+                        <tr>
+                            <td><b>ID</b></td>
+                            <td><b>ISBN</b></td>
+                            <td><b>Título</b></td>
+                            <td><b>Ano</b></td>
+                            <td><b>Páginas</b></td>
+                            <td><b>Volume</b></td>
+                            <td><b>Editora</b></td>
+                            <td><b>Autor</b></td>
+                            <td><b>Vizualizar</b></td>
+                            <td><b>Editar</b></td>
+                            <td><b>Excluir</b></td>
+                            
+                        </tr>
 
+                        <?php 
 
-            <div class="row justify-content-md-center ">
-                <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
-                    <label style="margin: auto;" for="txtTitulo">Título:</label>
-                    <input type="text" name="txtTitulo" id="txtTitulo" placeholder="123" class="form-control" readonly>
-                </div>
+                            //fetch_assoc() retorna cada linha da matriz
+                            while($exibir = $dadosLivros->fetch_assoc()){ 
+                                ?>
+                                <tr>
+                                    <td><?php echo $exibir["id"]?></td>
+                                    <td><?php echo $exibir["isbn"]?></td>
+                                    <td><?php echo $exibir["titulo"]?></td>
+                                    <td><?php echo $exibir["anoEdicao"]?></td>
+                                    <td><?php echo $exibir["numPaginas"]?></td>
+                                    <td><?php echo $exibir["volume"]?></td>
+                                    <td><?php echo $exibir["editora_id"]?></td>
+                                    <td><?php echo $exibir["autor_id"]?></td>
+                                    <td> <div class = "hover"> <a href="VizualizarDadosLivro.php?id=<?php echo $exibir["id"]?>"><img src="img/search-line (2).png"></a></div> </td>
+                                    <td> <div class="hover"> <a href="EditarLivro.php?id=<?php echo $exibir["id"]?>"><img src="img/edit-box-line (1).png"></a> </div></td>
+                                    <td> <div class= "hover"><a href="#" onclick="confirmarExclusao('<?php echo $exibir["id"] ?> ',' <?php echo $exibir["titulo"]?>')" ><img src="img/delete-bin-6-line (1).png"></a></div> </td>
+                                </tr>
+                                <?php
+                            }
 
-                <div class="form-group col-auto col-6
-                            col-lg-4 
-                            col-xl-3">
-                    <label style="margin: auto;" for="txtAutor">Autor:</label> <br>
-                    <input type="text" name="txtAutor" id="txtAutor" placeholder="Pedro" class="form-control" readonly>
-                </div>
+                        ?>
 
-                <div class="form-group col-auto col-6
-                            col-lg-4 
-                            col-xl-3">
-                    <label style="margin: auto;" for="txtEditora">Editora:</label> <br>
-                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Pedro" class="form-control" readonly>
-                </div>
-            </div>
-
-
-            <div class="row justify-content-md-center ">
-
-
-                <div class="form-group col-auto col-6
-                            col-lg-4 
-                            col-xl-3">
-                    <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="2020" class="form-control" readonly>
-                </div>
-
-                <div class="form-group col-auto col-6
-                            col-lg-4 
-                            col-xl-3">
-                    <label style="margin: auto;" for="IntNumeroPag">Número de Páginas:</label> <br>
-                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="500" class="form-control" readonly>
-                </div>
-
-                <div class="form-group col-auto col-6
-                            col-lg-4 
-                            col-xl-3">
-                    <label style="margin: auto;" for="Volume">Volume:</label> <br>
-                    <input type="number" name="Volume" id="Volume" placeholder="20" class="form-control" readonly>
-                </div>
-            </div>
-
-
-            <div class="row justify-content-md-center ">
-                <div class="form-group col-auto col-6
-                            col-lg-4 
-                            col-xl-3">
-                    <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
-                    <input type="text" name="txtISBN" id="txtISBN" placeholder="00989" class="form-control" readonly>
-                </div>
-
-            </div>
-
-            <!--
-           <div class="row justify-content-md-center">
-        
-            <div style="align-items: center;" >
-                <a href="EditarLivro.php"> <button class="btn btn-primary">Editar</button></a>
-                <input  type="reset" class="btn btn-danger" name="btnExcluir" value="Excluir">
-            </div>
+                    </table>
             
+                    
+                <?php 
+            }
         
-        </div>
-        -->
-
-        </form>
-
-        <div class="row justify-content-center">
-            <div class="mr-1">
-                <a href="EditarLivro.php"><button class="btn btn-primary">Editar</button></a>
-            </div>
-            <div>
-                <button class="btn btn-danger ">Excluir</button>
-            </div>
-        </div>
+        ?>
 
     </div>
 
