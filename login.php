@@ -16,8 +16,16 @@ $result = mysqli_query ($conn, $query);
 
 $row = mysqli_num_rows($result);
 
+//pegar o id do admin
+$query2 = "select id from admin where login = '{$login}'";
+$result2 = mysqli_query ($conn, $query2);
+$_SESSION['id'] = $result2;
+
+
+
 if($row == 1){
     $_SESSION['login'] = $login;
+
     header('Location: inicial.php');
     exit();
 }else{
@@ -25,3 +33,4 @@ if($row == 1){
     header('Location: login-admin.php');
     exit();
 }
+?>

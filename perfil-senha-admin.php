@@ -55,7 +55,7 @@ session_start();
     </div>
 
     <div class="container" id="menor">
-        <form action="" class="">
+        <form action="senha-edit-admin.php" method="POST">
             <!--Título-->
             <div class="col-12 mb-2">
                 <h1 id="title"><b>Editar Senha</b></h1>
@@ -65,8 +65,8 @@ session_start();
             <div class="row justify-content-center w-100">
 
                 <div class="form-group ">
-                    <label style="margin: auto;" for="senha_cad">Digite sua senha atual:</label><br>
-                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="1234"
+                    <label style="margin: auto;" for="senhaAtual">Digite sua senha atual:</label><br>
+                    <input name="senhaAtual" id="senhaAtual" class="form-control" type="password" placeholder="1234"
                         required>
                 </div>
 
@@ -75,8 +75,8 @@ session_start();
 
             <div class="row justify-content-center w-100">
                 <div class="form-group ">
-                    <label style="margin: auto;" for="senha_cad">Digite a nova senha:</label><br>
-                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="1234"
+                    <label style="margin: auto;" for="senha1">Digite a nova senha:</label><br>
+                    <input name="senha1" id="senha1" class="form-control" type="password" placeholder="1234"
                         required>
                 </div>
             </div>
@@ -84,8 +84,8 @@ session_start();
             <div class="row justify-content-center w-100">
 
                 <div class="form-group">
-                    <label style="margin: auto;" for="senha_cad">Confirmar senha:</label><br>
-                    <input name="senha_cad" id="senha_cad" class="form-control" type="password" placeholder="1234"
+                    <label style="margin: auto;" for="senha2">Confirmar senha:</label><br>
+                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234"
                         required>
                 </div>
             </div>

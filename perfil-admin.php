@@ -60,7 +60,7 @@ $result = mysqli_query ($conn, $query);
     </div>
 
     <div class="container" id="menor">
-        <form method="POST" action="consultar-admin.php">
+        <form method="POST" action="">
 
             <!--Título-->
             <div class="col-12 mb-2">
@@ -72,79 +72,90 @@ $result = mysqli_query ($conn, $query);
                 <?php while($dado = $result->fetch_array()){ ?>
 
                 <div class="form-group  col-4">
-                    <label style="margin: auto;" for="nome_cad">Nome:</label><br>
-                    <input name="nome_cad" id="nome_cad" class="form-control" type="text" value="<?php
-                                                                                                    echo $dado['nome'];
+                    <label style="margin: auto;" for="nome">Nome:</label><br>
+                    <input name="nome" id="nome" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['nome'] = $dado['nome'];
+                                                                                                    echo $_SESSION['nome'];
                                                                                                     ?>" readonly>
                 </div>
 
                 <div class="form-group  col-4">
-                    <label style="margin: auto;" for="login_cad">Login:</label><br>
-                    <input name="login_cad" id="login_cad" class="form-control" type="text" value="<?php
-                                                                                                    echo $dado['login'];
+                    <label style="margin: auto;" for="login">Login:</label><br>
+                    <input name="login" id="login" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['login'] = $dado['login'];
+                                                                                                    echo $_SESSION['login'];
                                                                                                     ?>" readonly>
                 </div>
 
                 <div class="form-group  col-4">
-                    <label style="margin: auto;" for="email_cad">Email:</label><br>
-                    <input name="email_cad" id="email_cad" class="form-control" type="text" value="<?php
-                                                                                                    echo $dado['email'];
+                    <label style="margin: auto;" for="email">Email:</label><br>
+                    <input name="email" id="email" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['email'] = $dado['email'];
+                                                                                                    echo $_SESSION['email'];
                                                                                                     ?>" readonly>
                 </div>
 
                 <div class="form-group  col-4">
-                    <label style="margin: auto;" for="datanasc_cad">Data de Nascimento:</label><br>
-                    <input name="datanasc_cad" id="datanasc_cad" class="form-control" type="date" value="<?php
-                                                                                                            echo $dado['dataNasc'];
-                                                                                                            ?>" readonly>
+                    <label style="margin: auto;" for="datanasc">Data de Nascimento:</label><br>
+                    <input name="dataNasc" id="dataNasc" class="form-control" type="date" value="<?php
+                                                                                                        $_SESSION['dataNasc'] = $dado['dataNasc'];
+                                                                                                    echo $_SESSION['dataNasc'];
+                                                                                                    ?>" readonly>
                 </div>
 
                 <div class="form-group  col-4">
-                    <label style="margin: auto;" for="cpf_cad">CPF:</label><br>
-                    <input name="cpf_cad" id="cpf_cad" class="form-control" type="text" value="<?php
-                                                                                                    echo $dado['cpf'];
+                    <label style="margin: auto;" for="cpf">CPF:</label><br>
+                    <input name="cpf" id="cpf" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['cpf'] = $dado['cpf'];
+                                                                                                    echo $_SESSION['cpf'];
                                                                                                     ?>" readonly>
                 </div>
                 <div class="form-group  col-4">
-                    <label style="margin: auto;" for="tel_cad">Telefone:</label><br>
-                    <input name="tel_cad" id="tel_cad" class="form-control" type="tel" value="<?php
-                                                                                                echo $dado['telefone'];
-                                                                                                ?>" readonly>
+                    <label style="margin: auto;" for="telefone">Telefone:</label><br>
+                    <input name="telefone" id="telefone" class="form-control" type="tel" value="<?php
+                                                                                                        $_SESSION['telefone'] = $dado['telefone'];
+                                                                                                    echo $_SESSION['telefone'];
+                                                                                                    ?>" readonly>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cep_cad">CEP:</label><br>
-                    <input name="cep_cad" id="cep_cad" class="form-control" type="text" value="<?php
-                                                                                                    echo $dado['cep'];
+                    <label style="margin: auto;" for="cep">CEP:</label><br>
+                    <input name="cep" id="cep" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['cep'] = $dado['cep'];
+                                                                                                    echo $_SESSION['cep'];
                                                                                                     ?>" readonly>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="estado_cad">Estado:</label><br>
-                    <input name="estado_cad" id="estado_cad" class="form-control" style=" text-transform: uppercase" type="text" value="<?php
-                                                                                                        echo $dado['estado'];
-                                                                                                        ?>" readonly>
+                    <label style="margin: auto;" for="estado">Estado:</label><br>
+                    <input name="estado" id="estado" class="form-control" style=" text-transform: uppercase" type="text" value="<?php
+                                                                                                        $_SESSION['estado'] = $dado['estado'];
+                                                                                                    echo $_SESSION['estado'];
+                                                                                                    ?>" readonly>
                 </div>
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cidade_cad">Cidade:</label><br>
-                    <input name="cidade_cad" id="cidade_cad" class="form-control" type="text" value="<?php
-                                                                                                        echo $dado['cidade'];
-                                                                                                        ?>" readonly>
+                    <label style="margin: auto;" for="cidade">Cidade:</label><br>
+                    <input name="cidade" id="cidade" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['cidade'] = $dado['cidade'];
+                                                                                                    echo $_SESSION['cidade'];
+                                                                                                    ?>" readonly>
                 </div>
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="bairro_cad">Bairro:</label><br>
-                    <input name="bairro_cad" id="bairro_cad" class="form-control" type="text" value="<?php
-                                                                                                        echo $dado['bairro'];
-                                                                                                        ?>" readonly>
+                    <label style="margin: auto;" for="bairro">Bairro:</label><br>
+                    <input name="bairro" id="bairro" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['bairro'] = $dado['bairro'];
+                                                                                                    echo $_SESSION['bairro'];
+                                                                                                    ?>" readonly>
                 </div>
 
 
                 <div class="form-group  col-6">
-                    <label style="margin: auto;" for="end_cad">Endereço:</label><br>
-                    <input name="end_cad" id="end_cad" class="form-control" type="text" value="<?php
-                                                                                                echo $dado['endereco'];
-                                                                                                ?>" readonly>
+                    <label style="margin: auto;" for="endereco">Endereço:</label><br>
+                    <input name="endereco" id="endereco" class="form-control" type="text" value="<?php
+                                                                                                        $_SESSION['endereco'] = $dado['endereco'];
+                                                                                                    echo $_SESSION['endereco'];
+                                                                                                    ?>" readonly>
                 </div>
             <?php } ?>
 
@@ -164,7 +175,7 @@ $result = mysqli_query ($conn, $query);
                 <a href="perfil-editable-admin.php"><button class="btn btn-primary">Editar</button></a>
             </div>
             <div>
-                <button class="btn btn-danger ">Excluir</button>
+            <a href="excluir-admin.php"><button class="btn btn-danger">Excluir</button></a>
             </div>
         </div>
     </div>

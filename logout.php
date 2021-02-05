@@ -2,3 +2,5 @@
 session_start();
 session_destroy();
 header('Location: login-admin.php');
+
+?>

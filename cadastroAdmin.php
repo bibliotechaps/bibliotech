@@ -81,7 +81,7 @@ session_start();
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="cpf">CPF:</label><br>
-                    <input name="cpf" type="text" class="form-control" placeholder="Ex.: 000.000.000-00" required onkeypress="$(this).mask('000.000.000-00');">
+                    <input name="cpf" type="text" class="form-control" placeholder="Ex.: 000.000.000-00" required onkeypress="$(this).mask('000.000.000-00')">
                 </div>
                 <div class="form-group col-3">
                     <label style="margin: auto;" for="cep">CEP:</label><br>

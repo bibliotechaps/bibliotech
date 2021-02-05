@@ -1,8 +1,10 @@
 <?php
-include_once("conexao.php");
+session_start();
+include("conexao.php");
+
+
 $nome = $_POST["nome"];
 $login = $_POST["login"];
-$senha = $_POST["senha"];
 $email = $_POST["email"];
 $telefone = $_POST["telefone"];
 $dataNasc = $_POST["dataNasc"];
@@ -12,28 +14,14 @@ $bairro = $_POST["bairro"];
 $estado = $_POST["estado"];
 $cidade = $_POST["cidade"];
 $endereco = $_POST["endereco"];
+$id = $_SESSION['id'];
 
-$sql = "insert into admin (nome, login, senha, email, telefone, dataNasc, cpf, cep, bairro, estado, cidade, endereco) values ('$nome','$login', '$senha','$email','$telefone','$dataNasc','$cpf','$cep','$bairro','$estado','$cidade','$endereco')";
-
-
-if ($conn->query($sql)) {
-?>
-
-    <script>
-        alert('Registro inserido com sucesso!');
-        window.location = 'login-admin.php';
-    </script>
-
-<?php
-} else {
-?>
-
-    <script>
-        alert('Erro ao inserir o registro!');
-        window.location = 'cadastroAdmin.php';
-    </script>
-
-<?php
-}
-
+$sql = "update admin set nome = '".$nome."', login = '".$login.", email = '".$email."', telefone = '".$telefone.", datanasc= '".$dataNasc.", cpf = '".$cpf."', cep = '".$cep.", bairro = '".$bairro.", estado = '".$estado."', cidade = '".$cidade.", endereco= '".$endereco." where id = ".$id;
+    //se a query estiver correta os dados serão atualizados
+    if(mysqli_query($sql,$conn)){
+        $msg = "Atualizado com sucesso!";
+    }else{
+        $msg = "Erro ao atualizar!";
+    }
+    mysqli_close($conn);
 ?>
