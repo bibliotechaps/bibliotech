@@ -1,4 +1,5 @@
 <?php
+include_once("conexao.php");
 session_start();
 ?>
 <!DOCTYPE html>
@@ -55,7 +56,7 @@ session_start();
     </div>
 
     <div class="container" id="menor">
-        <form action="senha-edit-admin.php" method="POST">
+        <form  method="POST" action="senha-edit-admin.php">
             <!--Título-->
             <div class="col-12 mb-2">
                 <h1 id="title"><b>Editar Senha</b></h1>
@@ -66,8 +67,7 @@ session_start();
 
                 <div class="form-group ">
                     <label style="margin: auto;" for="senhaAtual">Digite sua senha atual:</label><br>
-                    <input name="senhaAtual" id="senhaAtual" class="form-control" type="password" placeholder="1234"
-                        required>
+                    <input name="senhaAtual" id="senhaAtual" class="form-control" type="password" placeholder="1234" required>
                 </div>
 
 
@@ -75,9 +75,8 @@ session_start();
 
             <div class="row justify-content-center w-100">
                 <div class="form-group ">
-                    <label style="margin: auto;" for="senha1">Digite a nova senha:</label><br>
-                    <input name="senha1" id="senha1" class="form-control" type="password" placeholder="1234"
-                        required>
+                    <label style="margin: auto;" for="senha">Digite a nova senha:</label><br>
+                    <input name="senha" id="senha" class="form-control" type="password" placeholder="1234" required>
                 </div>
             </div>
 
@@ -85,18 +84,31 @@ session_start();
 
                 <div class="form-group">
                     <label style="margin: auto;" for="senha2">Confirmar senha:</label><br>
-                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234"
-                        required>
+                    <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234" required>
                 </div>
             </div>
+            <script>
+                //verifica se as senhas são iguais
+                var senha = document.getElementById("senha"),
+                    senha2 = document.getElementById("senha2");
 
+                function validatePassword() {
+                    if (senha.value != senha2.value) {
+                        senha2.setCustomValidity("Senhas diferentes!");
+                    } else {
+                        senha2.setCustomValidity('');
+                    }
+                }
+
+                senha.onchange = validatePassword;
+                senha2.onkeyup = validatePassword;
+            </script>
             <div class="row justify-content-center container" style="align-items: center;">
                 <div class="mr-2">
                     <a href="perfil-admin.php"><input class="btn btn-success" type="submit" value="Atualizar"></a>
                 </div>
                 <div>
-                    <a href="perfil-editable-admin.php"><button id="cancelar" type="button"
-                            class="btn btn-danger">Cancelar</button></a>
+                    <a href="perfil-editable-admin.php"><button id="cancelar" type="button" class="btn btn-danger">Cancelar</button></a>
                 </div>
 
             </div>
@@ -112,8 +124,7 @@ session_start();
                         <h1>Contate-nos</h1>
                     </div>
                     <div style="color:white" class="hover">
-                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png"
-                                alt="iconeInsta"></a>Instagram
+                        <a href="https://www.instagram.com/bibliotechaps/" target="_blank"> <img src="img/instagram.png" alt="iconeInsta"></a>Instagram
                     </div>
                     <div style="color:white">
                         <img src="img/mail.png" alt="iconeMail">bibliotech@outlook.com.br
