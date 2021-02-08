@@ -18,7 +18,7 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-x- JQuerry masks -->
+    <!-- JQuerry masks -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 
@@ -113,7 +113,7 @@ session_start();
             <div class="row justify-content-md-center ">
 
 
-                <div class="form-group col-auto col-6
+                <div class="form-group col-auto col-6 
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="anoEdicao">Ano de Edição:</label> <br>

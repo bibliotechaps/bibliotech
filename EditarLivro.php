@@ -69,6 +69,8 @@ else {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- JQuerry masks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 
 
@@ -155,21 +157,21 @@ else {
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required value="<?php echo $livro['anoEdicao'] ?>">
+                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required value="<?php echo $livro['anoEdicao'] ?> " onkeypress="$(this).mask('0000')">
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="IntNumeroPag">Número de Páginas:</label> <br>
-                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:" class="form-control" required value="<?php echo $livro['numPaginas'] ?>">
+                    <input type="number" name="IntNumeroPag" id="IntNumeroPag" placeholder="Número de páginas:" class="form-control" required value="<?php echo $livro['numPaginas'] ?>" onkeypress="$(this).mask('0000')">
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="Volume">Volume:</label> <br>
-                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required value="<?php echo $livro['volume'] ?>">
+                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required value="<?php echo $livro['volume'] ?> " onkeypress="$(this).mask('00')">
                 </div>
             </div>
 
@@ -179,7 +181,7 @@ else {
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
-                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required value="<?php echo $livro['isbn'] ?>">
+                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required value="<?php echo $livro['isbn'] ?>" onkeypress="$(this).mask('000-00-000-0000-0')">
                 </div>
 
             </div>

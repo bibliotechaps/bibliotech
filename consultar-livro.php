@@ -74,7 +74,7 @@
     </div>
 
 
-    <div class="container" id="menor">
+    <div class="container">
         <?php
             //comando sql para selecionar as pessoas cadastradas
             $sql = "SELECT * FROM bibliotech.livro order by titulo";
@@ -135,6 +135,8 @@
             }
         
         ?>
+
+        <br><br>
 
     </div>
 

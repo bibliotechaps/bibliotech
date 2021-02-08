@@ -8,8 +8,6 @@ $numPaginas = $_POST["numPaginas"];
 $volume = $_POST["volume"];
 $isbn = $_POST["isbn"];
 
-<<<<<<< HEAD
-
 $sql = "insert into livro (titulo, autor_id, editora_id, anoEdicao, numPaginas, volume, isbn) values ('$titulo','$autor_id', '$editora_id','$anoEdicao','$numPaginas','$volume','$isbn')";
 //
 
@@ -28,7 +26,6 @@ if ($conn->query($sql)) {
     </script>
 <?php
 }
-=======
     $sql = "insert into livro (titulo, autor_id, editora_id, anoEdicao, numPaginas, volume, isbn) values ('$titulo','$autor_id', '$editora_id','$anoEdicao','$numPaginas','$volume','$isbn')";
     //
     //
@@ -54,6 +51,5 @@ if ($conn->query($sql)) {
 
         <?php
     }
->>>>>>> 52aa6ff23f1909a16219c37efaf249ab2fb8618c
 
 ?>
