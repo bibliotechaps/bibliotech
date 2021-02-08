@@ -49,8 +49,8 @@ session_start();
                                                                                                   ?>
   </div>
   <div id="icone-sair" class="hover">
-    <img src="img/logout.png" alt="imagem login" title="Sair">Sair
-  </div>
+            <a href="logout.php"><img src="img/logout.png" alt="imagem login" title="Sair"></a>Sair
+        </div>
   <div class="hover" id="icone-home">
     <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
   </div>
