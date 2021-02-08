@@ -169,7 +169,7 @@ else {
 
                 <div class="form-group col-auto col-6
         col-lg-4 
-        col-xl-3">
+        col-xl-3">  
                     <label style="margin: auto;" for="Volume">Volume:</label> <br>
                     <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required value="<?php echo $livro['volume'] ?> " onkeypress="$(this).mask('00')">
                 </div>
