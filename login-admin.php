@@ -71,7 +71,7 @@ session_start();
                 
 
                 <br>
-                <hr noshade=”noshade” width="15%" size="20px">
+                <hr noshade=”noshade” width="50%" size="20px">
                 <div>
                 <a href="cadastroAdmin.php"><button class="btn btn-success w-100" type="button" name="btnCadastrar" >Criar Conta</button></a>
                 </div>

@@ -91,33 +91,33 @@ session_start();
                     <label style="margin: auto;" for="name">Estado:</label><br>
                     <!--<input name="estado" id="estado" class="form-control" type="text" placeholder="Seu Estado" required>-->
                     <select name="estado" class="form-control" required>
-                        <option value="ac">Acre</option>
-                        <option value="al">Alagoas</option>
-                        <option value="ap">Amapá</option>
-                        <option value="am">Amazonas</option>
-                        <option value="ba">Bahia</option>
-                        <option value="ce">Ceará</option>
-                        <option value="df">Distrito Federal</option>
-                        <option value="es">Espirito Santo</option>
-                        <option value="go">Goiás</option>
-                        <option value="ma">Maranhão</option>
-                        <option value="mt">Mato Grosso</option>
-                        <option value="ms">Mato Grosso do Sul</option>
-                        <option value="mg">Minas Gerais</option>
-                        <option value="pa">Pará</option>
-                        <option value="pb">Paraíba </option>
-                        <option value="pr">Paraná</option>
-                        <option value="pe">Pernambuco </option>
-                        <option value="pi">Piauí</option>
-                        <option value="rj">Rio de Janeiro </option>
-                        <option value="rn">Rio Grande do NorteAlagoas</option>
-                        <option value="rs">Rio Grande do Sul</option>
-                        <option value="ro">Rondônia </option>
-                        <option value="rr">Roraima </option>
-                        <option value="sc">Santa Catarina Alagoas</option>
-                        <option value="sp">São Paulo</option>
-                        <option value="se">Sergipe</option>
-                        <option value="to">Tocantins </option>
+                        <option value="ac">AC</option>
+                        <option value="al">AL</option>
+                        <option value="ap">AP</option>
+                        <option value="am">AM</option>
+                        <option value="ba">Ba</option>
+                        <option value="ce">CE</option>
+                        <option value="df">DF</option>
+                        <option value="es">ES</option>
+                        <option value="go">GO</option>
+                        <option value="ma">MA</option>
+                        <option value="mt">MT</option>
+                        <option value="ms">MS</option>
+                        <option value="mg">MG</option>
+                        <option value="pa">PA</option>
+                        <option value="pb">PB </option>
+                        <option value="pr">PR</option>
+                        <option value="pe">PR </option>
+                        <option value="pi">PI</option>
+                        <option value="rj">RJ </option>
+                        <option value="rn">RN</option>
+                        <option value="rs">RS</option>
+                        <option value="ro">RO</option>
+                        <option value="rr">RR </option>
+                        <option value="sc">SC</option>
+                        <option value="sp">SP</option>
+                        <option value="se">SE</option>
+                        <option value="to">TO </option>
                     </select>
                 </div>
                 <div class="form-group col-3">
