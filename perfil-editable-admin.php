@@ -123,7 +123,7 @@ include_once("conexao.php");
                         <option value="ac">AC</option>
                         <option value="al">AL</option>
                         <option value="ap">AP</option>
-                        <option value="am">Amazonas</option>
+                        <option value="am">AM</option>
                         <option value="ba">BA</option>
                         <option value="ce">CE</option>
                         <option value="df">DF</option>
