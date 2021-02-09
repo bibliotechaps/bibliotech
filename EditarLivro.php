@@ -178,7 +178,7 @@ else {
 
             <div class="row justify-content-md-center ">
                 <div class="form-group col-auto col-6
-        col-lg-4 
+        col-lg-4 s
         col-xl-3">
                     <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
                     <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required value="<?php echo $livro['isbn'] ?>" onkeypress="$(this).mask('000-00-000-0000-0')">

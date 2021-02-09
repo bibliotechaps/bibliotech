@@ -21,18 +21,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-<style>
-    table, td, th{
-        border: 1px solid black;
-        padding: 5px;
-        
-    }
-
-    table{
-        width: 100%
-        
-    }
-</style>
+   
 
 <script>
     function confirmarExclusao(id, tt){
@@ -76,7 +65,7 @@
 
     <div class="container">
         <?php
-            //comando sql para selecionar as pessoas cadastradas
+            //comando sql para selecionar os livros cadastradas
             $sql = "SELECT * FROM bibliotech.livro order by titulo";
             //executar o comando sql
             $dadosLivros = $conn->query($sql);
@@ -89,7 +78,14 @@
                 <hr>
             </div>
 
-             <table>
+            <form>
+                <h3>Pesquisar livro</h3>
+                <input type="text" id="buscar" value="" size="50" class="form-control" style="width: 50%"><br><br>
+                <div id="conteudopesquisa">
+                </div>
+            </form>
+
+             <table class="table table-striped table-hover">
                         <tr>
                             <td><b>ID</b></td>
                             <td><b>ISBN</b></td>
@@ -119,9 +115,9 @@
                                     <td><?php echo $exibir["volume"]?></td>
                                     <td><?php echo $exibir["editora_id"]?></td>
                                     <td><?php echo $exibir["autor_id"]?></td>
-                                    <td> <div class = "hover"> <a href="VizualizarDadosLivro.php?id=<?php echo $exibir["id"]?>"><img src="img/search-line (2).png"></a></div> </td>
-                                    <td> <div class="hover"> <a href="EditarLivro.php?id=<?php echo $exibir["id"]?>"><img src="img/edit-box-line (1).png"></a> </div></td>
-                                    <td> <div class= "hover"><a href="#" onclick="confirmarExclusao('<?php echo $exibir["id"] ?> ',' <?php echo $exibir["titulo"]?>')" ><img src="img/delete-bin-6-line (1).png"></a></div> </td>
+                                    <td> <div class = "hover"> <a href="VizualizarDadosLivro.php?id=<?php echo $exibir["id"]?>"><img src="img/search-line (2).png" title="Vizualizar"></a></div> </td>
+                                    <td> <div class="hover"> <a href="EditarLivro.php?id=<?php echo $exibir["id"]?>"><img src="img/edit-box-line (1).png" title="Editar"></a> </div></td>
+                                    <td> <div class= "hover"><a href="#" onclick="confirmarExclusao('<?php echo $exibir["id"] ?> ',' <?php echo $exibir["titulo"]?>')" ><img src="img/delete-bin-6-line (1).png " title="Excluir"></a></div> </td>
                                 </tr>
                                 <?php
                             }
