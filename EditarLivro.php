@@ -4,8 +4,8 @@ include_once('conexao.php');
 //receber os dados do form 
 if(isset($_POST['txtTitulo'])){
     $titulo = $_POST["txtTitulo"];
-    $autor = $_POST["txtAutor"];
-    $editora = $_POST["txtEditora"];
+    $autor = $_POST["autor_id"];
+    $editora = $_POST["editora_id"];
     $ano = $_POST["IntAnoEdicao"];
     $paginas = $_POST["IntNumeroPag"];
     $volume = $_POST["Volume"];
@@ -138,14 +138,54 @@ else {
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtAutor">Autor:</label> <br>
-                    <input type="text" name="txtAutor" id="txtAutor" placeholder="Autor do livro:" class="form-control" required value="<?php echo $livro['autor_id'] ?>">
+                    <select name="autor_id" class="form-control" required>
+                        <?php
+                        include_once('conexao.php');
+
+                        $sql = "SELECT id, nome FROM bibliotech.autor ORDER BY nome";
+
+                        $nome = $conn->query($sql);
+
+                        while($rowNome = $nome->fetch_assoc()){
+                            ?>
+
+                            <option value="<?php echo $rowNome["id"]; ?>" <?php echo ($rowNome["id"] == $livro["id"]) ? "selected" : "" ?> >
+                            <?php echo $rowNome["nome"]; ?>
+                            
+                            </option>
+                             <?php
+                        }
+
+                        ?>
+                    </select>
+
                 </div>
 
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="txtEditora">Editora:</label> <br>
-                    <input type="text" name="txtEditora" id="txtEditora" placeholder="Editora do livro:" class="form-control" required value="<?php echo $livro['editora_id'] ?>">
+                    <select name="editora_id" class="form-control" required>
+                        <?php
+                        include_once('conexao.php');
+
+                        $sql = "SELECT id, nome FROM bibliotech.editora ORDER BY nome";
+
+                        $nome = $conn->query($sql);
+
+                        while($rowNome = $nome->fetch_assoc()){
+                            ?>
+
+                            <option value="<?php echo $rowNome["id"]; ?>" <?php echo ($rowNome["id"] == $livro["id"]) ? "selected" : "" ?> >
+                            <?php echo $rowNome["nome"]; ?>
+                            
+                            </option>
+                             <?php
+                        }
+
+                        ?>
+                    </select>
+     
                 </div>
             </div>
 
@@ -157,7 +197,7 @@ else {
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="IntAnoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required value="<?php echo $livro['anoEdicao'] ?> " onkeypress="$(this).mask('0000')">
+                    <input type="number" name="IntAnoEdicao" id="IntAnoEdicao" placeholder="Ano de edição:" class="form-control" required value="<?php echo $livro['anoEdicao'] ?>" onkeypress="$(this).mask('0000')">
                 </div>
 
                 <div class="form-group col-auto col-6
@@ -171,7 +211,7 @@ else {
         col-lg-4 
         col-xl-3">  
                     <label style="margin: auto;" for="Volume">Volume:</label> <br>
-                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required value="<?php echo $livro['volume'] ?> " onkeypress="$(this).mask('00')">
+                    <input type="number" name="Volume" id="Volume" placeholder="Informe o volume:" class="form-control" required value="<?php echo $livro['volume'] ?>" onkeypress="$(this).mask('00')" >
                 </div>
             </div>
 
@@ -181,7 +221,7 @@ else {
         col-lg-4 s
         col-xl-3">
                     <label style="margin: auto;" for="txtISBN">ISBN:</label> <br>
-                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required value="<?php echo $livro['isbn'] ?>" onkeypress="$(this).mask('000-00-000-0000-0')">
+                    <input type="text" name="txtISBN" id="txtISBN" placeholder="Informe o ISBN do livro:" class="form-control" required value="<?php echo $livro['isbn'] ?>" onkeypress="$(this).mask('000-00-000-0000-0')" required minlength="17" maxlength="17">
                 </div>
 
             </div>

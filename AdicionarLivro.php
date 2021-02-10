@@ -56,11 +56,16 @@ session_start();
         </div>
     </div>
 
+    
+
 
     <div class="container" id="menor">
+
+    
+
         <form method="post" autocomplete="off" action="insert-livro.php">
 
-
+        
 
             <!--Título-->
             <div class="col-12 mb-2">
@@ -79,7 +84,7 @@ session_start();
                 <div class="form-group col-auto col-6
                             col-lg-4 
                             col-xl-3">
-                    <label for="autor_id" class="control-label" style="margin: auto;">Autor:</label>
+                    <label for="autor_id" class="control-label" style="margin: auto;"> Autor:  </label>
                     <select name="autor_id" class="form-control" required>
                         <?php
                         $result_niveis_autor = "SELECT * FROM autor";
@@ -95,7 +100,7 @@ session_start();
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
-                    <label for="editora_id" class="control-label" style="margin: auto;">Editora:</label>
+                    <label for="editora_id" class="control-label" style="margin: auto;">Editora: </a></label>
                     <select name="editora_id" class="form-control" required>
                         <?php
                         $result_niveis_editora = "SELECT * FROM editora";
@@ -106,7 +111,11 @@ session_start();
                                     }
                                         ?>
                     </select>
-                </div>
+                </div>                
+                    
+                
+                 
+                
             </div>
 
 
@@ -133,6 +142,7 @@ session_start();
                     <label style="margin: auto;" for="volume">Volume:</label> <br>
                     <input type="number" name="volume" placeholder="Informe o volume:" class="form-control" required onkeypress="$(this).mask('00')">
                 </div>
+
             </div>
 
 
