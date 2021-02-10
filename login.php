@@ -21,7 +21,9 @@ $query2 = "select id from admin where login = '{$login}'";
 $result2 = mysqli_query ($conn, $query2);
 $_SESSION['id'] = $result2;
 
-
+$query3 = "select senha from admin where login = '{$login}'";
+$result3 = mysqli_query ($conn, $query3);
+$_SESSION['senha'] = $result3;
 
 if($row == 1){
     $_SESSION['login'] = $login;

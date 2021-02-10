@@ -16,8 +16,9 @@ $cidade = $_POST["cidade"];
 $endereco = $_POST["endereco"];
 $id = $_SESSION['id'];
 
-$sql = "update admin set nome = '".$nome."', login = '".$login.", email = '".$email."', telefone = '".$telefone.", datanasc= '".$dataNasc.", cpf = '".$cpf."', cep = '".$cep.", bairro = '".$bairro.", estado = '".$estado."', cidade = '".$cidade.", endereco= '".$endereco." where id = ".$id;
-    //se a query estiver correta os dados serão atualizados
+$sql = ("UPDATE admin SET nome = ".$nome. ", login = ".$login.", email = ".$email.", telefone = ".$telefone.", datanasc= ".$dataNasc.", cpf = ".$cpf.", cep = ".$cep.", bairro = ".$bairro.", estado = ".$estado.", cidade = ".$cidade.", endereco= ".$endereco." where id = ".$id);
+
+//se a query estiver correta os dados serão atualizados
     if(mysqli_query($sql,$conn)){
         $msg = "Atualizado com sucesso!";
     }else{
