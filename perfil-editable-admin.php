@@ -47,8 +47,8 @@ include_once("conexao.php");
                                                                                                                 ?>
             </div>
             <div id="icone-sair" class="hover">
-            <a href="logout.php"><img src="img/logout.png" alt="imagem login" title="Sair"></a>Sair
-        </div>
+                <a href="logout.php"><img src="img/logout.png" alt="imagem login" title="Sair"></a>Sair
+            </div>
             <div class="hover" id="icone-home">
                 <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
             </div>
@@ -65,7 +65,7 @@ include_once("conexao.php");
                     <h1 id="title"><b>Perfil do Admin</b></h1>
                     <hr>
                 </div>
- 
+
 
 
 
@@ -101,14 +101,14 @@ include_once("conexao.php");
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="cpf">CPF:</label><br>
                         <input name="cpf" id="cpf" class="form-control" type="text" onkeypress="$(this).mask('000.000.000-00')" value="<?php
-                                                                                            echo $_SESSION['cpf'];
-                                                                                            ?>" required minlength="11" maxlength="11">
+                                                                                                                                        echo $_SESSION['cpf'];
+                                                                                                                                        ?>" required minlength="11" maxlength="11">
                     </div>
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="telefone">telefone:</label><br>
                         <input name="telefone" id="telefone" class="form-control" onkeypress="$(this).mask('(00) 90000-0000')" type="text" value="<?php
-                                                                                                            echo $_SESSION['telefone'];
-                                                                                                            ?>" minlength="11" maxlength="11">
+                                                                                                                                                    echo $_SESSION['telefone'];
+                                                                                                                                                    ?>" minlength="11" maxlength="11">
                     </div>
 
                     <div class="form-group  col-3">
@@ -119,35 +119,35 @@ include_once("conexao.php");
                     <div class="form-group  col-3">
                         <label style="margin: auto;" for="estado">Estado:</label><br>
                         <select name="estado" style=" text-transform: uppercase" class="form-control" required>
-                        <option value =""disabled selected>Anterior - <?php echo $_SESSION['estado'];?></option>
-                        <option value="ac">AC</option>
-                        <option value="al">AL</option>
-                        <option value="ap">AP</option>
-                        <option value="am">AM</option>
-                        <option value="ba">BA</option>
-                        <option value="ce">CE</option>
-                        <option value="df">DF</option>
-                        <option value="es">ES</option>
-                        <option value="go">GO</option>
-                        <option value="ma">MA</option>
-                        <option value="mt">MT</option>
-                        <option value="ms">MS</option>
-                        <option value="mg">MG</option>
-                        <option value="pa">PA</option>
-                        <option value="pb">PB </option>
-                        <option value="pr">PR</option>
-                        <option value="pe">PE </option>
-                        <option value="pi">PI</option>
-                        <option value="rj">RJ </option>
-                        <option value="rn">RN</option>
-                        <option value="rs">RS</option>
-                        <option value="ro">RO </option>
-                        <option value="rr">RR </option>
-                        <option value="sc">SC</option>
-                        <option value="sp">SP</option>
-                        <option value="se">SE</option>
-                        <option value="to">TO </option>
-                    </select>
+                            <option value="" disabled selected>Anterior - <?php echo $_SESSION['estado']; ?></option>
+                            <option value="ac">AC</option>
+                            <option value="al">AL</option>
+                            <option value="ap">AP</option>
+                            <option value="am">AM</option>
+                            <option value="ba">BA</option>
+                            <option value="ce">CE</option>
+                            <option value="df">DF</option>
+                            <option value="es">ES</option>
+                            <option value="go">GO</option>
+                            <option value="ma">MA</option>
+                            <option value="mt">MT</option>
+                            <option value="ms">MS</option>
+                            <option value="mg">MG</option>
+                            <option value="pa">PA</option>
+                            <option value="pb">PB </option>
+                            <option value="pr">PR</option>
+                            <option value="pe">PE </option>
+                            <option value="pi">PI</option>
+                            <option value="rj">RJ </option>
+                            <option value="rn">RN</option>
+                            <option value="rs">RS</option>
+                            <option value="ro">RO </option>
+                            <option value="rr">RR </option>
+                            <option value="sc">SC</option>
+                            <option value="sp">SP</option>
+                            <option value="se">SE</option>
+                            <option value="to">TO </option>
+                        </select>
                     </div>
                     <div class="form-group  col-3">
                         <label style="margin: auto;" for="cidade">Cidade:</label><br>
@@ -180,8 +180,12 @@ include_once("conexao.php");
                     </div>
                     <div class="mt-4 mb-4 col-6">
                         <a href="perfil-admin.php"> <input type="submit" class="btn btn-success w-20" value="Atualizar"> </a>
+
                         <a href="perfil-admin.php"><button type="button" class="btn btn-danger w-20">Cancelar</button></a>
+
+
                     </div>
+                    <br><br>
                 </div>
 
             </form>

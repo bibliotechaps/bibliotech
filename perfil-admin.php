@@ -3,7 +3,7 @@ session_start();
 include("conexao.php");
 
 $query = "select * from admin where login = '{$_SESSION['login']}'";
-$result = mysqli_query ($conn, $query);
+$result = mysqli_query($conn, $query);
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ $result = mysqli_query ($conn, $query);
         </div>
     </div>
 
-    <div class="container" id="menor">
+    <div class="container">
         <form method="POST" action="">
 
             <!--Título-->
@@ -69,95 +69,96 @@ $result = mysqli_query ($conn, $query);
             </div>
 
             <div class="row justify-content-around p-3 w-100 m-0">
-                <?php while($dado = $result->fetch_array()){ ?>
+                <?php while ($dado = $result->fetch_array()) { ?>
 
-                <div class="form-group  col-4">
-                    <label style="margin: auto;" for="nome">Nome:</label><br>
-                    <input name="nome" id="nome" class="form-control" type="text" value="<?php
-                                                                                                        $_SESSION['nome'] = $dado['nome'];
-                                                                                                    echo $_SESSION['nome'];
-                                                                                                    ?>" readonly>
-                </div>
+                    <div class="form-group  col-4">
+                        <label style="margin: auto;" for="nome">Nome:</label><br>
+                        <input name="nome" id="nome" class="form-control" type="text" value="<?php
+                                                                                                $_SESSION['nome'] = $dado['nome'];
+                                                                                                echo $_SESSION['nome'];
+                                                                                                ?>" readonly>
+                    </div>
 
-                <div class="form-group  col-4">
-                    <label style="margin: auto;" for="login">Login:</label><br>
-                    <input name="login" id="login" class="form-control" type="text" value="<?php
-                                                                                                        $_SESSION['login'] = $dado['login'];
-                                                                                                    echo $_SESSION['login'];
-                                                                                                    ?>" readonly>
-                </div>
+                    <div class="form-group  col-4">
+                        <label style="margin: auto;" for="login">Login:</label><br>
+                        <input name="login" id="login" class="form-control" type="text" value="<?php
+                                                                                                $_SESSION['login'] = $dado['login'];
+                                                                                                echo $_SESSION['login'];
+                                                                                                ?>" readonly>
+                    </div>
 
-                <div class="form-group  col-4">
-                    <label style="margin: auto;" for="email">Email:</label><br>
-                    <input name="email" id="email" class="form-control" type="text" value="<?php
-                                                                                                        $_SESSION['email'] = $dado['email'];
-                                                                                                    echo $_SESSION['email'];
-                                                                                                    ?>" readonly>
-                </div>
+                    <div class="form-group  col-4">
+                        <label style="margin: auto;" for="email">Email:</label><br>
+                        <input name="email" id="email" class="form-control" type="text" value="<?php
+                                                                                                $_SESSION['email'] = $dado['email'];
+                                                                                                echo $_SESSION['email'];
+                                                                                                ?>" readonly>
+                    </div>
 
-                <div class="form-group  col-4">
-                    <label style="margin: auto;" for="datanasc">Data de Nascimento:</label><br>
-                    <input name="dataNasc" id="dataNasc" class="form-control" type="date" value="<?php
+                    <div class="form-group  col-4">
+                        <label style="margin: auto;" for="datanasc">Data de Nascimento:</label><br>
+                        <input name="dataNasc" id="dataNasc" class="form-control" type="date" value="<?php
                                                                                                         $_SESSION['dataNasc'] = $dado['dataNasc'];
-                                                                                                    echo $_SESSION['dataNasc'];
-                                                                                                    ?>" readonly>
-                </div>
+                                                                                                        echo $_SESSION['dataNasc'];
+                                                                                                        ?>" readonly>
+                    </div>
 
-                <div class="form-group  col-4">
-                    <label style="margin: auto;" for="cpf">CPF:</label><br>
-                    <input name="cpf" id="cpf" class="form-control" type="text" value="<?php
-                                                                                                        $_SESSION['cpf'] = $dado['cpf'];
-                                                                                                    echo $_SESSION['cpf'];
-                                                                                                    ?>" readonly>
-                </div>
-                <div class="form-group  col-4">
-                    <label style="margin: auto;" for="telefone">Telefone:</label><br>
-                    <input name="telefone" id="telefone" class="form-control" type="tel" value="<?php
-                                                                                                        $_SESSION['telefone'] = $dado['telefone'];
+                    <div class="form-group  col-4">
+                        <label style="margin: auto;" for="cpf">CPF:</label><br>
+                        <input name="cpf" id="cpf" class="form-control" type="text" value="<?php
+                                                                                            $_SESSION['cpf'] = $dado['cpf'];
+                                                                                            echo $_SESSION['cpf'];
+                                                                                            ?>" readonly>
+                    </div>
+                    <div class="form-group  col-4">
+                        <label style="margin: auto;" for="telefone">Telefone:</label><br>
+                        <input name="telefone" id="telefone" class="form-control" type="tel" value="<?php
+                                                                                                    $_SESSION['telefone'] = $dado['telefone'];
                                                                                                     echo $_SESSION['telefone'];
                                                                                                     ?>" readonly>
-                </div>
+                    </div>
 
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cep">CEP:</label><br>
-                    <input name="cep" id="cep" class="form-control" type="text" value="<?php
-                                                                                                        $_SESSION['cep'] = $dado['cep'];
-                                                                                                    echo $_SESSION['cep'];
-                                                                                                    ?>" readonly>
-                </div>
+                    <div class="form-group  col-3">
+                        <label style="margin: auto;" for="cep">CEP:</label><br>
+                        <input name="cep" id="cep" class="form-control" type="text" value="<?php
+                                                                                            $_SESSION['cep'] = $dado['cep'];
+                                                                                            echo $_SESSION['cep'];
+                                                                                            ?>" readonly>
+                    </div>
 
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="estado">Estado:</label><br>
-                    <input name="estado" id="estado" class="form-control" style=" text-transform: uppercase" type="text" value="<?php
-                                                                                                        $_SESSION['estado'] = $dado['estado'];
-                                                                                                    echo $_SESSION['estado'];
-                                                                                                    ?>" readonly>
-                </div>
+                    <div class="form-group  col-3">
+                        <label style="margin: auto;" for="estado">Estado:</label><br>
+                        <input name="estado" id="estado" class="form-control" style=" text-transform: uppercase" type="text" value="<?php
+                                                                                                                                    $_SESSION['estado'] = $dado['estado'];
+                                                                                                                                    echo $_SESSION['estado'];
+                                                                                                                                    ?>" readonly>
+                    </div>
 
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="cidade">Cidade:</label><br>
-                    <input name="cidade" id="cidade" class="form-control" type="text" value="<?php
-                                                                                                        $_SESSION['cidade'] = $dado['cidade'];
+                    <div class="form-group  col-3">
+                        <label style="margin: auto;" for="cidade">Cidade:</label><br>
+                        <input name="cidade" id="cidade" class="form-control" type="text" value="<?php
+                                                                                                    $_SESSION['cidade'] = $dado['cidade'];
                                                                                                     echo $_SESSION['cidade'];
                                                                                                     ?>" readonly>
-                </div>
-                <div class="form-group  col-3">
-                    <label style="margin: auto;" for="bairro">Bairro:</label><br>
-                    <input name="bairro" id="bairro" class="form-control" type="text" value="<?php
-                                                                                                        $_SESSION['bairro'] = $dado['bairro'];
+                    </div>
+                    <div class="form-group  col-3">
+                        <label style="margin: auto;" for="bairro">Bairro:</label><br>
+                        <input name="bairro" id="bairro" class="form-control" type="text" value="<?php
+                                                                                                    $_SESSION['bairro'] = $dado['bairro'];
                                                                                                     echo $_SESSION['bairro'];
                                                                                                     ?>" readonly>
-                </div>
+                    </div>
 
 
-                <div class="form-group  col-6">
-                    <label style="margin: auto;" for="endereco">Endereço:</label><br>
-                    <input name="endereco" id="endereco" class="form-control" type="text" value="<?php
+                    <div class="form-group  col-6">
+                        <label style="margin: auto;" for="endereco">Endereço:</label><br>
+                        <input name="endereco" id="endereco" class="form-control" type="text" value="<?php
                                                                                                         $_SESSION['endereco'] = $dado['endereco'];
-                                                                                                    echo $_SESSION['endereco'];
-                                                                                                    ?>" readonly>
-                </div>
-            <?php } ?>
+                                                                                                        echo $_SESSION['endereco'];
+                                                                                                        ?>" readonly>
+
+                    </div>
+                <?php } ?>
 
             </div>
 
@@ -175,9 +176,10 @@ $result = mysqli_query ($conn, $query);
                 <a href="perfil-editable-admin.php"><button class="btn btn-primary">Editar</button></a>
             </div>
             <div>
-            <a href="excluir-admin.php"><button class="btn btn-danger">Excluir</button></a>
+                <a href="excluir-admin.php"><button class="btn btn-danger">Excluir</button></a>
             </div>
         </div>
+        <br><br>
     </div>
     <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
     <div class="imagemFundoBottom">
