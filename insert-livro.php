@@ -8,27 +8,8 @@ $numPaginas = $_POST["numPaginas"];
 $volume = $_POST["volume"];
 $isbn = $_POST["isbn"];
 
-$sql = "insert into livro (titulo, autor_id, editora_id, anoEdicao, numPaginas, volume, isbn) values ('$titulo','$autor_id', '$editora_id','$anoEdicao','$numPaginas','$volume','$isbn')";
-//
 
-if ($conn->query($sql)) {
-?>
-    <script>
-        alert('Registro inserido com sucesso!');
-        window.location = 'inicial.php';
-    </script>
-<?php
-} else {
-?>
-    <script>
-        alert('Erro ao inserir o registro!');
-        window.location = 'insert-livro.php';
-    </script>
-<?php
-}
     $sql = "insert into livro (titulo, autor_id, editora_id, anoEdicao, numPaginas, volume, isbn) values ('$titulo','$autor_id', '$editora_id','$anoEdicao','$numPaginas','$volume','$isbn')";
-    //
-    //
     //echo "$sql";
 
     if ($conn->query($sql) === TRUE) {

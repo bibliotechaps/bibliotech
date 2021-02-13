@@ -151,7 +151,7 @@ session_start();
         col-lg-4 
         col-xl-3">
                     <label style="margin: auto;" for="isbn">ISBN:</label> <br>
-                    <input type="text" name="isbn" placeholder="Informe o ISBN do livro:" class="form-control" required onkeypress="$(this).mask('000-00-000-0000-0')">
+                    <input type="text" name="isbn" placeholder="Informe o ISBN do livro:" class="form-control" required onkeypress="$(this).mask('000-00-000-0000-0')" required minlength="17" maxlength="17">
                 </div>
 
             </div>

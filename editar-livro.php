@@ -142,15 +142,15 @@ else {
                         <?php
                         include_once('conexao.php');
 
-                        $sql = "SELECT id, nome FROM bibliotech.autor ORDER BY nome";
+                        $sqlAutor = "SELECT id, nome FROM autor ORDER BY nome";
 
-                        $nome = $conn->query($sql);
+                        $nomeAutor = $conn->query($sqlAutor);
 
-                        while($rowNome = $nome->fetch_assoc()){
+                        while($rowAutor = $nomeAutor->fetch_assoc()){
                             ?>
 
-                            <option value="<?php echo $rowNome["id"]; ?>" <?php echo ($rowNome["id"] == $livro["id"]) ? "selected" : "" ?> >
-                            <?php echo $rowNome["nome"]; ?>
+                            <option value="<?php echo $rowAutor["id"]; ?>" <?php echo ($rowAutor["id"] == $livro["autor_id"]) ? "selected" : "" ?> >
+                            <?php echo $rowAutor["nome"]; ?>
                             
                             </option>
                              <?php
@@ -169,15 +169,15 @@ else {
                         <?php
                         include_once('conexao.php');
 
-                        $sql = "SELECT id, nome FROM bibliotech.editora ORDER BY nome";
+                        $sqlEditora = "SELECT id, nome FROM editora ORDER BY nome";
 
-                        $nome = $conn->query($sql);
+                        $nomeEditora = $conn->query($sqlEditora);
 
-                        while($rowNome = $nome->fetch_assoc()){
+                        while($rowEditora = $nomeEditora->fetch_assoc()){
                             ?>
 
-                            <option value="<?php echo $rowNome["id"]; ?>" <?php echo ($rowNome["id"] == $livro["id"]) ? "selected" : "" ?> >
-                            <?php echo $rowNome["nome"]; ?>
+                            <option value="<?php echo $rowEditora["id"]; ?>" <?php echo ($rowEditora["id"] == $livro["editora_id"]) ? "selected" : "" ?> >
+                            <?php echo $rowEditora["nome"]; ?>
                             
                             </option>
                              <?php
