@@ -63,13 +63,13 @@ session_start();
 
     
 
-        <form method="post" autocomplete="off" action="insert-livro.php">
+        <form method="post" autocomplete="off" action="insert-autor.php">
 
         
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Adicionar Livro </b></h1>
+                <h1 id="title"><b> Adicionar Autor </b></h1>
                 <hr>
             </div>
 
@@ -77,83 +77,11 @@ session_start();
 
             <div class="row justify-content-md-center ">
                 <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
-                    <label style="margin: auto;" for="titulo">Título:</label>
-                    <input type="text" name="titulo" placeholder="Título do livro:" class="form-control" autofocus required>
+                    <label style="margin: auto;" for="autor_id">Autor:</label>
+                    <input type="text" name="autor_id" placeholder="Nome do autor:" class="form-control" autofocus required>
                 </div>
 
-                <div class="form-group col-auto col-6
-                            col-lg-4 
-                            col-xl-3">
-                    <label for="autor_id" class="control-label" style="margin: auto;"> Autor: <a href="adicionar-autor.php"><img src="img/add-line (2).png" alt="imagem addAutor" title="Adicionar Autor"></a> </label>
-                    <select name="autor_id" class="form-control" required>
-                        <?php
-                        $result_niveis_autor = "SELECT * FROM autor";
-                        $resultado_niveis_autor = mysqli_query($conn, $result_niveis_autor);
-                        while ($row_niveis_autor = mysqli_fetch_assoc($resultado_niveis_autor)) { ?>
-                            <option value="<?php echo $row_niveis_autor['id']; ?>"><?php echo $row_niveis_autor['nome']; ?>
-                            </option><?php
-                                    }
-                                        ?>
-                    </select>
-                </div>
-
-                <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-                    <label for="editora_id" class="control-label" style="margin: auto;">Editora: <a href="adicionar-editora.php"><img src="img/add-line (2).png" alt="imagem addEditora" title="Adicionar Editora"></a></label>
-                    <select name="editora_id" class="form-control" required>
-                        <?php
-                        $result_niveis_editora = "SELECT * FROM editora";
-                        $resultado_niveis_editora = mysqli_query($conn, $result_niveis_editora);
-                        while ($row_niveis_editora = mysqli_fetch_assoc($resultado_niveis_editora)) { ?>
-                            <option value="<?php echo $row_niveis_editora['id']; ?>"><?php echo $row_niveis_editora['nome']; ?>
-                            </option><?php
-                                    }
-                                        ?>
-                    </select>
-                </div>                
-                    
-                
-                 
-                
-            </div>
-
-
-            <div class="row justify-content-md-center ">
-
-
-                <div class="form-group col-auto col-6 
-        col-lg-4 
-        col-xl-3">
-                    <label style="margin: auto;" for="anoEdicao">Ano de Edição:</label> <br>
-                    <input type="number" name="anoEdicao" placeholder="Ano de edição:" class="form-control" required onkeypress="$(this).mask('0000')">
-                </div>
-
-                <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-                    <label style="margin: auto;" for="numPaginas">Número de Páginas:</label> <br>
-                    <input type="number" name="numPaginas" id="numPaginas" placeholder="Número de páginas:" class="form-control" required onkeypress="$(this).mask('0000')">
-                </div>
-
-                <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-                    <label style="margin: auto;" for="volume">Volume:</label> <br>
-                    <input type="number" name="volume" placeholder="Informe o volume:" class="form-control" required onkeypress="$(this).mask('00')">
-                </div>
-
-            </div>
-
-
-            <div class="row justify-content-md-center ">
-                <div class="form-group col-auto col-6
-        col-lg-4 
-        col-xl-3">
-                    <label style="margin: auto;" for="isbn">ISBN:</label> <br>
-                    <input type="text" name="isbn" placeholder="Informe o ISBN do livro:" class="form-control" required onkeypress="$(this).mask('000-00-000-0000-0')" required minlength="17" maxlength="17">
-                </div>
-
+                         
             </div>
 
 
@@ -161,7 +89,7 @@ session_start();
 
                 <div style="align-items: center;">
                     <input type="submit" class="btn btn-success" name="btnAdicionar" value="Adicionar">
-                    <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                    <a href="adicionar-livro.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                 </div>
 
 

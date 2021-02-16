@@ -116,7 +116,7 @@ else {
     ?>
 
     <div class="container" id="menor">
-        <form method="post" autocomplete="on" action = "EditarLivro.php?id=<?php echo $_GET['id']?>">
+        <form method="post" autocomplete="on" action = "editar-livro.php?id=<?php echo $_GET['id']?>">
 
 
 
