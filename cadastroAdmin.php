@@ -76,7 +76,7 @@ session_start();
                 </div>
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="dataNasc">Data de Nascimento:</label><br>
-                    <input name="dataNasc" class="form-control" type="date" required>
+                    <input name="dataNasc" class="form-control" type="date" required > 
                 </div>
 
                 <div class="form-group  col-3">

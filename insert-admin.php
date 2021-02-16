@@ -16,7 +16,7 @@ $endereco = $_POST["endereco"];
 $sql = "insert into admin (nome, login, senha, email, telefone, dataNasc, cpf, cep, bairro, estado, cidade, endereco) values ('$nome','$login','".md5($senha)."','$email','$telefone','$dataNasc','$cpf','$cep','$bairro','$estado','$cidade','$endereco')";
 echo $sql;
 
-if ($conn->query($sql)) {
+if ($conn->query($sql)) { 
 ?>
 
     <script>
@@ -30,7 +30,7 @@ if ($conn->query($sql)) {
 
     <script>
         alert('Erro ao inserir o registro!');
-        //window.location = 'cadastroAdmin.php';
+        window.location = 'cadastroAdmin.php';
     </script>
 
 <?php

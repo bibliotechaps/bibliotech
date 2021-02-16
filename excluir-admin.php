@@ -11,4 +11,5 @@ mysqli_query($strcon,$sql) or die("Erro ao deletar dados");
 echo "Excluido";
 mysqli_close($strcon);
 session_destroy();
+header('Location: login-admin.php');
 ?>

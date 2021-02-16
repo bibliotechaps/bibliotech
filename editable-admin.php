@@ -16,10 +16,12 @@ $cidade = $conn->real_escape_string($_POST['cidade']);
 $endereco = $conn->real_escape_string($_POST['endereco']);
 $id = $_SESSION['id'];
 
-$sql = "UPDATE admin SET nome = ".$nome. ", login = ".$login.", email = ".$email.", telefone = ".$telefone.", datanasc= ".$dataNasc.", cpf = ".$cpf.", cep = ".$cep.", bairro = ".$bairro.", estado = ".$estado.", cidade = ".$cidade.", endereco= ".$endereco." where id = ".$id;
+$queryUpdate = "update admin set nome = ".$nome. ", login = ".$login.", email = ".$email.", telefone = ".$telefone.", datanasc= ".$dataNasc.", cpf = ".$cpf.", cep = ".$cep.", bairro = ".$bairro.", estado = ".$estado.", cidade = ".$cidade.", endereco= ".$endereco." where id = ".$id;
+echo $queryUpdate;
 
 //se a query estiver correta os dados serão atualizados
-    if(mysqli_query($sql,$conn)){
+    if(mysqli_query($conn,$queryUpdate)){
+        $rowId = mysqli_fetch_assoc($resultId);
         $msg = "Atualizado com sucesso!";
     }else{
         $msg = "Erro ao atualizar!";
