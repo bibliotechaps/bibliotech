@@ -66,6 +66,9 @@
                     ?>
 
                 </table>
+
+                <br> 
+                <br>
         
 
 
@@ -74,5 +77,10 @@
      }         
      else{
         echo "Nenhum registro retornado! Verifique seus filtros.";
+        ?>
+            <br>
+            <br>
+           
+        <?php
      }
 ?>
