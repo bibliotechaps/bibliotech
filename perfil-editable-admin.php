@@ -28,6 +28,16 @@ include_once("conexao.php");
     </head>
 
     <body>
+
+    <?php
+        $admin;
+        if(isset($_GET['id'])){
+            $sqlSelect = "SELECT * from admin where id = ".$_GET['id'];
+            $consultaSelect = $conn->query($sqlSelect);
+            $adminSelect = $consultaSelect->fetch_assoc();
+
+        }
+    ?>
         <!-- div para barra de configurações (ter em todos os códigos)-->
         <div class="imagemFundoTop">
             <!--<img src="img/fundo-cinza.png" alt="Imagem de Fundo" width=100% height=75px>-->
@@ -68,58 +78,58 @@ include_once("conexao.php");
 
 
 
-
+ 
                 <div class="row justify-content-around p-3 w-100 m-0">
 
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="nome">Nome:</label><br>
                         <input name="nome" id="nome" class="form-control" type="text" value="<?php
-                                                                                                echo $_SESSION['nome'];
+                                                                                                echo $adminSelect['nome'];
                                                                                                 ?>" autofocus required>
                     </div>
 
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="login">Login:</label><br>
                         <input name="login" id="login" class="form-control" type="text" value="<?php
-                                                                                                echo $_SESSION['login'];
+                                                                                                echo $adminSelect['login'];
                                                                                                 ?>" required>
                     </div>
 
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="email">Email:</label><br>
                         <input name="email" id="email" class="form-control" type="text" value="<?php
-                                                                                                echo $_SESSION['email'];
+                                                                                                echo $adminSelect['email'];
                                                                                                 ?>" required>
                     </div>
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="dataNasc">Data de Nascimento:</label><br>
                         <input name="dataNasc" id="dataNasc" class="form-control" type="date" value="<?php
-                                                                                                        echo $_SESSION['dataNasc'];
+                                                                                                        echo $adminSelect['dataNasc'];
                                                                                                         ?>" required>
                     </div>
 
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="cpf">CPF:</label><br>
                         <input name="cpf" id="cpf" class="form-control" type="text" onkeypress="$(this).mask('000.000.000-00')" value="<?php
-                                                                                                                                        echo $_SESSION['cpf'];
+                                                                                                                                        echo $adminSelect['cpf'];
                                                                                                                                         ?>" required minlength="11" maxlength="11">
                     </div>
                     <div class="form-group  col-4">
                         <label style="margin: auto;" for="telefone">telefone:</label><br>
                         <input name="telefone" id="telefone" class="form-control" onkeypress="$(this).mask('(00) 90000-0000')" type="text" value="<?php
-                                                                                                                                                    echo $_SESSION['telefone'];
+                                                                                                                                                    echo $adminSelect['telefone'];
                                                                                                                                                     ?>" minlength="11" maxlength="11">
                     </div>
 
                     <div class="form-group  col-3">
                         <label style="margin: auto;" for="cep">CEP:</label><br>
-                        <input name="cep" id="cep" class="form-control" type="text" onkeypress="$(this).mask('00.000-000')" value="<?php echo $_SESSION['cep']; ?>" required minlength="8" maxlength="8">
+                        <input name="cep" id="cep" class="form-control" type="text" onkeypress="$(this).mask('00.000-000')" value="<?php echo $adminSelect['cep']; ?>" required minlength="8" maxlength="8">
                     </div>
 
                     <div class="form-group  col-3">
                         <label style="margin: auto;" for="estado">Estado:</label><br>
                         <select name="estado" style=" text-transform: uppercase" class="form-control" required>
-                            <option value="" disabled selected>Anterior - <?php echo $_SESSION['estado']; ?></option>
+                            <option value="" disabled selected>Anterior - <?php echo $adminSelect['estado']; ?></option>
                             <option value="ac">AC</option>
                             <option value="al">AL</option>
                             <option value="ap">AP</option>
@@ -152,14 +162,14 @@ include_once("conexao.php");
                     <div class="form-group  col-3">
                         <label style="margin: auto;" for="cidade">Cidade:</label><br>
                         <input name="cidade" id="cidade" class="form-control" type="text" value="<?php
-                                                                                                    echo $_SESSION['cidade'];
+                                                                                                    echo $adminSelect['cidade'];
                                                                                                     ?>" required>
                     </div>
 
                     <div class="form-group  col-3">
                         <label style="margin: auto;" for="bairro">Bairro:</label><br>
                         <input name="bairro" id="bairro" class="form-control" type="text" value="<?php
-                                                                                                    echo $_SESSION['bairro'];
+                                                                                                    echo $adminSelect['bairro'];
                                                                                                     ?>" required>
                     </div>
                     <div class="col-3">
@@ -167,7 +177,7 @@ include_once("conexao.php");
                     <div class="form-group  col-6">
                         <label style="margin: auto;" for="endereco">Endereço:</label><br>
                         <input name="endereco" id="endereco" class="form-control" type="text" value="<?php
-                                                                                                        echo $_SESSION['endereco'];
+                                                                                                        echo $adminSelect['endereco'];
                                                                                                         ?>" required>
                     </div>
                     <div class="col-3">

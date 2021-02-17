@@ -63,9 +63,8 @@ include('verifica_login.php');
         </div>
 
         <div class="align-text-center">
-            <h4 id="title">Bem vindo, <?php
+        <h4 id="title" style=" text-transform: uppercase" > Bem vindo, <?php
                                         echo $_SESSION['login'];
-                                        echo $_SESSION['id'];
                                         ?></h4>
         </div>
 

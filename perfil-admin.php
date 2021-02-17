@@ -2,6 +2,7 @@
 session_start();
 include("conexao.php");
 
+
 $query = "select * from admin where login = '{$_SESSION['login']}'";
 $result = mysqli_query($conn, $query);
 
@@ -26,6 +27,14 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="css/arquivo1.css">
     <!-- JS -->
     <script type="text/javascript" src="js/arquivo-js.js"></script>
+
+    <script>
+    function confirmarExclusao(nome, id){
+        if(window.confirm("Deseja realmente excluir o perfil do Admin " + id + " - " + nome+ "?")){
+            window.location="excluir-admin.php?id=" + id;
+        }
+    }
+    </script>
 
 </head>
 
@@ -173,10 +182,10 @@ $result = mysqli_query($conn, $query);
         -->
         <div class="row justify-content-center">
             <div class="mr-1">
-                <a href="perfil-editable-admin.php"><button class="btn btn-primary">Editar</button></a>
+                <a href="perfil-editable-admin.php?id=<?php echo $_SESSION['id'];?>"><button class="btn btn-primary">Editar</button></a>
             </div>
             <div>
-                <a href="excluir-admin.php"><button class="btn btn-danger">Excluir</button></a>
+                <a href="#" onclick="confirmarExclusao('<?php echo $_SESSION['nome'];?>','<?php echo $_SESSION['id'];?>')"><button class="btn btn-danger">Excluir</button></a>
             </div>
         </div>
         <br><br>

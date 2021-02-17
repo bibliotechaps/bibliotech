@@ -1,15 +1,29 @@
-<?php 
+<?php
 session_start();
-$servername = "200.18.128.52";
-$username = "pedro_allan_samu";
-$password = "pedro_allan_samu";
-$nomeBD = "bibliotech";
+include_once('conexao.php');
 
-$strcon = mysqli_connect($servername, $username, $password, $nomeBD) or die('Erro ao conectar no banco');   
-$sql = "delete from admin where id=".$_SESSION['id']; 
-mysqli_query($strcon,$sql) or die("Erro ao deletar dados");
-echo "Excluido";
-mysqli_close($strcon);
-session_destroy();
-header('Location: login-admin.php');
+if (isset($_GET['id'])) {
+
+
+    $sqlDelete = "delete from admin where id=" . $_GET['id'];
+
+    if ($conn->query($sqlDelete) === TRUE) {
+    ?>
+        <script>
+            alert("Admin excluido com sucesso");
+            window.location = "login.php";
+            session_destroy();
+        </script>
+
+    <?php
+    } else {
+    ?>
+        <script>
+            alert("Erro ao exluir Admin");
+            window.location = "perfil-admin.php";
+        </script>
+
+<?php
+    }
+}
 ?>

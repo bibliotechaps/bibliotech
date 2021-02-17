@@ -26,6 +26,7 @@ session_start();
 </head>
 
 <body>
+
     <!-- div para barra de configurações(ter em todos os códigos)-->
     <div class="imagemFundoTop">
         <!--<img src="img/fundo-cinza.png" alt="Imagem de Fundo" width=100% height=75px>-->
@@ -56,7 +57,7 @@ session_start();
     </div>
 
     <div class="container" id="menor">
-        <form  method="POST" action="senha-edit-admin.php">
+        <form method="POST" >
             <!--Título-->
             <div class="col-12 mb-2">
                 <h1 id="title"><b>Editar Senha</b></h1>
@@ -83,7 +84,7 @@ session_start();
             <div class="row justify-content-center w-100">
 
                 <div class="form-group">
-                    <label style="margin: auto;" for="senha2">Confirmar senha:</label><br>
+                    <label style="margin: auto;" for="senha2">Confirmar nova senha:</label><br>
                     <input name="senha2" id="senha2" class="form-control" type="password" placeholder="1234" required>
                 </div>
             </div>
@@ -105,10 +106,10 @@ session_start();
             </script>
             <div class="row justify-content-center container" style="align-items: center;">
                 <div class="mr-2">
-                    <a href="perfil-admin.php"><input class="btn btn-success" type="submit" value="Atualizar"></a>
+                    <a href="confirmSenha.php?id=<?php echo $_SESSION['id'];?>"><input class="btn btn-success" type="submit" value="Atualizar"></a>
                 </div>
                 <div>
-                    <a href="perfil-editable-admin.php"><button id="cancelar" type="button" class="btn btn-danger">Cancelar</button></a>
+                    <a href="perfil-admin.php"><button id="cancelar" type="button" class="btn btn-danger">Cancelar</button></a>
                 </div>
 
             </div>
