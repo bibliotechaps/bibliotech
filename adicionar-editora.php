@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Autor</title>
+    <title>Adicionar Editora</title>
     <link rel="stylesheet" href="css/arquivo1.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -63,13 +63,13 @@ session_start();
 
     
 
-        <form method="post" autocomplete="off" action="insert-autor.php">
+        <form method="post" autocomplete="off" action="insert-editora.php">
 
         
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Adicionar Autor </b></h1>
+                <h1 id="title"><b> Adicionar Editora </b></h1>
                 <hr>
             </div>
 
@@ -77,8 +77,8 @@ session_start();
 
             <div class="row justify-content-md-center ">
                 <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
-                    <label style="margin: auto;" for="autor_id">Autor:</label>
-                    <input type="text" name="nome" placeholder="Nome do autor:" class="form-control" autofocus required>
+                    <label style="margin: auto;" for="autor_id">Editora:</label>
+                    <input type="text" name="nome" placeholder="Nome da editora:" class="form-control" autofocus required>
                 </div>
 
                          

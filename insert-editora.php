@@ -4,7 +4,7 @@ $nome = $_POST["nome"];
 
 
 
-    $sql = "insert into autor (nome) values ('$nome')";
+    $sql = "insert into editora (nome) values ('$nome')";
     //echo "$sql";
 
     if ($conn->query($sql) === TRUE) {

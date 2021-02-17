@@ -84,10 +84,10 @@ session_start();
                 <div class="form-group col-auto col-6
                             col-lg-4 
                             col-xl-3">
-                    <label for="autor_id" class="control-label" style="margin: auto;"> Autor: <a href="adicionar-autor.php"><img src="img/add-line (2).png" alt="imagem addAutor" title="Adicionar Autor"></a> </label>
+                    <label for="autor_id" class="control-label" style="margin: auto;"> Autor: <a href="consultar-autor.php"><img src="img/search-line (4).png" alt="imagem conAutor" title="Consultar Autores"></a> <a href="adicionar-autor.php"><img src="img/add-line (2).png" alt="imagem addAutor" title="Adicionar Autor"></a> </label>
                     <select name="autor_id" class="form-control" required>
                         <?php
-                        $result_niveis_autor = "SELECT * FROM autor";
+                        $result_niveis_autor = "SELECT * FROM autor order by nome";
                         $resultado_niveis_autor = mysqli_query($conn, $result_niveis_autor);
                         while ($row_niveis_autor = mysqli_fetch_assoc($resultado_niveis_autor)) { ?>
                             <option value="<?php echo $row_niveis_autor['id']; ?>"><?php echo $row_niveis_autor['nome']; ?>
@@ -100,10 +100,10 @@ session_start();
                 <div class="form-group col-auto col-6
         col-lg-4 
         col-xl-3">
-                    <label for="editora_id" class="control-label" style="margin: auto;">Editora: <a href="adicionar-editora.php"><img src="img/add-line (2).png" alt="imagem addEditora" title="Adicionar Editora"></a></label>
+                    <label for="editora_id" class="control-label" style="margin: auto;">Editora: <a href="consultar-editora.php"><img src="img/search-line (4).png" alt="imagem conEditora" title="Consultar Editoras"></a> <a href="adicionar-editora.php"><img src="img/add-line (2).png" alt="imagem addEditora" title="Adicionar Editora"></a></label>
                     <select name="editora_id" class="form-control" required>
                         <?php
-                        $result_niveis_editora = "SELECT * FROM editora";
+                        $result_niveis_editora = "SELECT * FROM editora order by nome";
                         $resultado_niveis_editora = mysqli_query($conn, $result_niveis_editora);
                         while ($row_niveis_editora = mysqli_fetch_assoc($resultado_niveis_editora)) { ?>
                             <option value="<?php echo $row_niveis_editora['id']; ?>"><?php echo $row_niveis_editora['nome']; ?>
