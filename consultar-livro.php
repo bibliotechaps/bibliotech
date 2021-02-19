@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    include_once('conexao.php');
+session_start();
+include_once('conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +22,23 @@
 
 
     <script text="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function() {
+            //var nome_da_variável = $("id_do_elemento).val();
+            var pesquisa = $("#pesquisa").val();
+
+            //criar um objeto com os dados recebidos para enviar via post
+            var dados = {
+                pesquisa: pesquisa
+            }
+
+            //enviar os dados via post para consultar-livro.php
+            $.post('pesquisa-livro.php', dados, function(retorna) {
+                //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-livro.php
+                $(".resultados").html(retorna);
+            });
 
             //pesquisa os dados do form por submit
-
-            $("#form-pesquisa").submit(function(evento){
+            $("#busca").submit(function(evento) {
                 //cancela a ação padrão do formulário, impedindo que ele atualize a página
                 evento.preventDefault();
 
@@ -36,45 +48,28 @@
 
                 //criar um objeto com os dados recebidos para enviar via post
                 var dados = {
-                    pesquisa : pesquisa
+                    pesquisa: pesquisa
                 }
-                
+
                 //enviar os dados via post para consultar-livro.php
-                $.post('pesquisa-livro.php', dados, function(retorna){
+                $.post('pesquisa-livro.php', dados, function(retorna) {
                     //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-livro.php
                     $(".resultados").html(retorna);
                 });
-                
             });
-
-            // $("#pesquisa").keyup(function(evento){
-            //     evento.preventDefault();
-            //     var pesquisa = $("#pesquisa").val();
-                
-            //     var dados = {
-            //         pesquisa : pesquisa
-            //     }
-                
-            //     $.post('buscaPessoa.php', dados, function(retorna){
-            //         $(".resultados").html(retorna);
-            //     });
-            // });
         });
-
-
     </script>
 
-<script>
-    function confirmarExclusao(id, tt){
-        if(window.confirm("Deseja realmente apagar o registro:\n" + id + "-" + tt)){
-            window.location = "excluir-livro.php?id=" + id;
+    <script>
+        function confirmarExclusao(id, tt) {
+            if (window.confirm("Deseja realmente apagar o registro:\n" + id + "-" + tt)) {
+                window.location = "excluir-livro.php?id=" + id;
+            }
         }
-    }
-
-</script>
+    </script>
 </head>
 
-<body>
+<body id="busca">
 
     <!--Div para a imagem de fundo de cima (ter em todos os códigos)-->
     <div class="imagemFundoTop">
@@ -106,14 +101,15 @@
 
     <div class="container">
         <?php
-            //comando sql para selecionar os livros cadastradas
-            $sql = "SELECT * FROM bibliotech.livro order by titulo";
-            //executar o comando sql
-            $dadosLivros = $conn->query($sql);
-            if ($dadosLivros->num_rows > 0){
-                ?>
 
-                <!--Título-->
+        //comando sql para selecionar os livros cadastradas
+        $sql = "SELECT * FROM bibliotech.livro order by titulo";
+        //executar o comando sql
+        $dadosLivros = $conn->query($sql);
+        if ($dadosLivros->num_rows > 0) {
+        ?>
+
+            <!--Título-->
             <div class="col-12 mb-2">
                 <h1 id="title"><b> Consultar Livro </b></h1>
                 <hr>
@@ -121,79 +117,24 @@
 
             <form id="form-pesquisa" action="" method="post">
                 <h3>Pesquisar livro</h3>
-               
-                <input type="text" id="pesquisa" name="pesquisa"  placeholder="Informe o nome ou o ano do(s) livro(s) a ser(em) pesquisado(s):" value="" size="50" class="form-control" style="width: 50%">  <br>  
-                <input type="submit" class="btn btn-primary" name="enviar" value="Pesquisar" >  <br> <br>
-                
-                  
+
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Informe o nome ou o ano do(s) livro(s) a ser(em) pesquisado(s):" value="" size="50" class="form-control" style="width: 50%"> <br>
+                <input type="submit" class="btn btn-primary" name="enviar" value="Pesquisar"> <br> <br>
+
+
             </form>
 
-            
-            <div class="resultados">
+
+            <div class="resultados" style="min-height: 230px;">
                 <!--Os dados da busca efetuada pelo aquivo buscaPessoa.php, serão exibidos aqui-->
             </div>
+           
+        <?php
+        }
 
-            <table class="table table-striped table-hover">
-                    <tr>
-                        <td><b>ID</b></td>
-                        <td><b>ISBN</b></td>
-                        <td><b>Título</b></td>
-                        <td><b>Ano</b></td>
-                        <td><b>Páginas</b></td>
-                        <td><b>Volume</b></td>
-                        <td><b>Editora</b></td>
-                        <td><b>Autor</b></td>
-                        <td><b>Vizualizar</b></td>
-                        <td><b>Editar</b></td>
-                        <td><b>Excluir</b></td>
-                        
-                    </tr>
-
-                    <?php 
-
-                        //fetch_assoc() retorna cada linha da matriz
-                        while($exibir = $dadosLivros->fetch_assoc()){ 
-                            ?>
-                            <tr>
-                                <td><?php echo $exibir["id"]?></td>
-                                <td><?php echo $exibir["isbn"]?></td>
-                                <td><?php echo $exibir["titulo"]?></td>
-                                <td><?php echo $exibir["anoEdicao"]?></td>
-                                <td><?php echo $exibir["numPaginas"]?></td>
-                                <td><?php echo $exibir["volume"]?></td>
-                                <?php
-                                //busca os dados da editora com base no código da tabela de livros
-                                $sqlEditora = "SELECT * FROM editora WHERE id = " . $exibir["editora_id"];
-                                $dadosEditora = $conn->query($sqlEditora);
-                                $editora = $dadosEditora->fetch_assoc();
-                                ?>
-                                <td><?php echo $editora["nome"]?></td>
-                                <?php
-                                //busca os dados do autor com base no código da tabela de livros
-                                $sqlAutor = "SELECT * FROM autor WHERE id = " . $exibir["autor_id"];
-                                $dadosAutor = $conn->query($sqlAutor);
-                                $autor = $dadosAutor->fetch_assoc();
-                                ?>
-                                <td><?php echo $autor["nome"]?></td>
-                                <td> <div class = "hover"> <a href="vizualizar-dados-livro.php?id=<?php echo $exibir["id"]?>"><img src="img/search-line (2).png" title="Vizualizar"></a></div> </td>
-                                <td> <div class="hover"> <a href="editar-livro.php?id=<?php echo $exibir["id"]?>"><img src="img/edit-box-line (1).png" title="Editar"></a> </div></td>
-                                <td> <div class= "hover"><a href="#" onclick="confirmarExclusao('<?php echo $exibir["id"] ?> ',' <?php echo $exibir["titulo"]?>')" ><img src="img/delete-bin-6-line (1).png " title="Excluir"></a></div> </td>
-                            </tr>
-                            <?php
-                        }
-
-                    ?>
-
-                </table>
-        
-            
-                    
-                <?php 
-            }
-        
         ?>
 
-        <br><br>
+        
 
     </div>
     </div>
