@@ -20,7 +20,8 @@ if ($conn->query($sql)) {
 
     <script>
         alert('Registro inserido com sucesso!');
-        window.location = 'login-admin.php';
+        
+        //window.location = 'login-admin.php';
     </script>
 
 <?php
@@ -29,7 +30,7 @@ if ($conn->query($sql)) {
 
     <script>
         alert('Erro ao inserir o registro!');
-        window.location = 'cadastroAdmin.php';
+        //window.location = 'cadastroAdmin.php';
     </script>
 
 <?php

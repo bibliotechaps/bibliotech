@@ -23,6 +23,14 @@ session_start();
     <!-- JS -->
     <script type="text/javascript" src="js/arquivo-js.js"></script>
 
+    <script>
+    function confirmarModificacao(nome, id){
+        if(window.confirm("Deseja realmente editar a senha do Admin " + id + " - " + nome+ "?")){
+            senha2.setCustomValidity('');
+        }
+    }
+    </script>
+
 </head>
 
 <body>
@@ -57,7 +65,7 @@ session_start();
     </div>
 
     <div class="container" id="menor">
-        <form method="POST" >
+        <form method="POST" action="confirmSenha.php">
             <!--Título-->
             <div class="col-12 mb-2">
                 <h1 id="title"><b>Editar Senha</b></h1>
@@ -106,7 +114,7 @@ session_start();
             </script>
             <div class="row justify-content-center container" style="align-items: center;">
                 <div class="mr-2">
-                    <a href="confirmSenha.php?id=<?php echo $_SESSION['id'];?>"><input class="btn btn-success" type="submit" value="Atualizar"></a>
+                <a href="#" onclick="confirmarModificacao('<?php echo $_SESSION['nome'];?>','<?php echo $_SESSION['id'];?>')"><input class="btn btn-success" type="submit" onclick="validatePassword()" value="Atualizar"><a>
                 </div>
                 <div>
                     <a href="perfil-admin.php"><button id="cancelar" type="button" class="btn btn-danger">Cancelar</button></a>

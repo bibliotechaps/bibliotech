@@ -20,6 +20,7 @@ if (isset($_POST['nome'])) {
 
     if ($conn->query($sqlUpdate) === TRUE) {
         $_SESSION['login'] = $login;
+        $_SESSION['nome'] = $nome;
         ?>
 
         <script>
