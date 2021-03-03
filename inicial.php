@@ -75,9 +75,12 @@ include('verifica_login.php');
         </div>
         <br>
         <div class="container">
-            <a href="adicionar-livro.php" class="hover"><img src="img/book.png" alt="Adcionar Livro"></a> Adicionar
-            Livro
+            <a href="adicionar-livro.php" class="hover"><img src="img/book.png" alt="Adcionar Livro"></a> Adicionar Livro
 
+        </div>
+        <br>
+        <div class="container">
+            <a href="efetuarEmprestimo.php" class="hover"><img src="img/efetuar.png" alt="Efetuar Emprestimo"></a> Efetuar Empréstimo
         </div>
         <br>
     </div>
