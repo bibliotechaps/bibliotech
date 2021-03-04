@@ -20,6 +20,8 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JQuerry masks -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <!-- Date -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
 </head>
@@ -54,6 +56,21 @@ session_start();
         <div class="hover" id="icone-aluno">
             <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
         </div>
+        <script>
+            //data do empréstimo
+            function getDateNow() {
+                let today = new Date();
+                let date = today.getDate().toString().padStart(2, '0') + '/' +
+                    (today.getMonth() + 1).toString().padStart(2, '0') + '/' + today.getFullYear();
+                let time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0')+ ':' + today.getSeconds().toString().padStart(2, '0');
+                return date + ' ' + time;
+            }
+
+            document.addEventListener('DOMContentLoaded', (event) => {
+                document.getElementById('inputDateNow').value = getDateNow();
+            });
+
+        </script>
     </div>
 
 
@@ -63,7 +80,7 @@ session_start();
 
 
 
-        <form method="post" autocomplete="off" action="insert-livro.php">
+        <form method="post" autocomplete="off" action="insert-emprestimo.php">
 
 
 
@@ -102,22 +119,20 @@ session_start();
                     </select>
                 </div>
                 <div class="col-2"></div>
-                <script>
-                    var today = moment().format('YYYY-MM-DD');
-                    document.getElementById("datePicker").value = today;
-                </script>
                 <div class="col-3"></div>
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="dataNasc">Data do Empréstimo:</label><br>
-                    <input name="dataNasc" class="form-control" type="date" required>
+                    <label style="margin: auto;" for="dataEmp">Data do Empréstimo:</label><br>
+                    <input name="dataEmp" class="form-control" type="date-local" id="inputDateNow" required>
+
                 </div>
 
 
                 <div class="form-group  col-3">
-                    <label style="margin: auto;" for="dataNasc">Data da Devolução:</label><br>
-                    <input name="dataNasc" class="form-control" type="date" required>
+                    <label style="margin: auto;" for="dataDev">Data da Devolução:</label><br>
+                    <input name="dataDev" class="form-control" type="date" required>
                 </div>
                 <div class="col-3"></div>
+                
                 <div style="align-items: center;">
                     <input class="btn btn-success" type="submit" name="btnCadastrar" value="Realizar">
                     <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>

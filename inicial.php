@@ -80,7 +80,7 @@ include('verifica_login.php');
         </div>
         <br>
         <div class="container">
-            <a href="efetuarEmprestimo.php" class="hover"><img src="img/efetuar.png" alt="Efetuar Emprestimo"></a> Efetuar Empréstimo
+            <a href="efetuar-emprestimo.php" class="hover"><img src="img/efetuar.png" alt="Efetuar Emprestimo"></a> Efetuar Empréstimo
         </div>
         <br>
     </div>
