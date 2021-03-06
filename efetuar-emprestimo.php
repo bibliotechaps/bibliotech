@@ -28,6 +28,10 @@ session_start();
 
 
 <body>
+<script>
+    $('#InputDateTime').mask("99/99/9999 99:99:99");
+    $('#InputDate').mask("99/99/9999");
+</script>
 
     <!--Div para a imagem de fundo de cima (ter em todos os códigos)-->
     <div class="imagemFundoTop">
@@ -78,7 +82,9 @@ session_start();
 
     <div class="container" id="menor">
 
-
+        <script>
+        $('.date_time').mask('00/00/0000 00:00:00');
+        </script>
 
         <form method="post" autocomplete="off" action="insert-emprestimo.php">
 
@@ -122,14 +128,14 @@ session_start();
                 <div class="col-3"></div>
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="dataEmp">Data do Empréstimo:</label><br>
-                    <input name="dataEmp" class="form-control" type="date-local" id="inputDateNow" required>
+                    <input name="dataEmp" class="form-control" type="date-local"  id="inputDateNow" required onkeypress="$(this).mask('00/00/0000 00:00:00')" >
 
                 </div>
 
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="dataDev">Data da Devolução:</label><br>
-                    <input name="dataDev" class="form-control" type="date" required>
+                    <input name="dataDev" class="form-control" type="date-local" required onkeypress="$(this).mask('00/00/0000 00:00:00')" value="<?php echo date('d/m/Y', strtotime('+10 days'))?>" >
                 </div>
                 <div class="col-3"></div>
                 
