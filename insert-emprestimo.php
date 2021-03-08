@@ -14,7 +14,8 @@ if ($conn->query($sql)) {
 
     <script>
         alert('Empréstimo inserido com sucesso!');
-        window.location = 'consultar-emprestimo.php';
+        //window.location = 'consultar-emprestimo.php';
+        window.location = 'efetuar-emprestimo.php';
     </script>
 
 <?php

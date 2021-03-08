@@ -20,18 +20,34 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JQuerry masks -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <!-- Date -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        //data do empréstimo
+        function atuDataDev() {
+
+            let today = document.getElementById('dataEmp').value;
+            let date = new Date(today.substring(0, 4), today.substring(5, 7), today.substring(8, 10));
+            date.setDate(date.getDate() + 10);
+
+            document.getElementById('dataDev').value = date.getFullYear() + '-' + date.getMonth().toString().padStart(2, '0') + '-' + date.getDate().toString().padStart(2, '0');
+        }
+
+        //confirmacao do emprestimo
+        function pergunta() {
+            if (confirm('Tem certeza que deseja realizar esse empréstimo?')) {
+                document.meuformulario.submit()
+            }
+        }
+    </script>
 
 
 </head>
 
 
 <body>
-<script>
-    $('#InputDateTime').mask("99/99/9999 99:99:99");
-    $('#InputDate').mask("99/99/9999");
-</script>
+    <script>
+        $('#InputDateTime').mask("99/99/9999 99:99:99");
+        $('#InputDate').mask("99/99/9999");
+    </script>
 
     <!--Div para a imagem de fundo de cima (ter em todos os códigos)-->
     <div class="imagemFundoTop">
@@ -60,21 +76,7 @@ session_start();
         <div class="hover" id="icone-aluno">
             <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
         </div>
-        <script>
-            //data do empréstimo
-            function getDateNow() {
-                let today = new Date();
-                let date = today.getDate().toString().padStart(2, '0') + '/' +
-                    (today.getMonth() + 1).toString().padStart(2, '0') + '/' + today.getFullYear();
-                let time = today.getHours().toString().padStart(2, '0') + ':' + today.getMinutes().toString().padStart(2, '0')+ ':' + today.getSeconds().toString().padStart(2, '0');
-                return date + ' ' + time;
-            }
 
-            document.addEventListener('DOMContentLoaded', (event) => {
-                document.getElementById('inputDateNow').value = getDateNow();
-            });
-
-        </script>
     </div>
 
 
@@ -83,10 +85,10 @@ session_start();
     <div class="container" id="menor">
 
         <script>
-        $('.date_time').mask('00/00/0000 00:00:00');
+            $('.date_time').mask('00/00/0000 00:00:00');
         </script>
 
-        <form method="post" autocomplete="off" action="insert-emprestimo.php">
+        <form method="post" autocomplete="off" action="insert-emprestimo.php" name="meuformulario">
 
 
 
@@ -98,13 +100,13 @@ session_start();
             <div class="row justify-content-center p-3 w-100 m-0">
                 <div class="col-2"></div>
                 <div class="form-group col-auto col-4">
-                    <label for="aluno_id" class="control-label hover" style="margin: auto;"> Aluno: </label>
+                    <label for="aluno_id" class="control-label hover" style="margin: auto;"> Login Aluno: </label>
                     <select name="aluno_id" class="form-control" required>
                         <?php
-                        $result_niveis_aluno = "SELECT * FROM aluno order by nome";
+                        $result_niveis_aluno = "SELECT * FROM aluno order by login";
                         $resultado_niveis_aluno = mysqli_query($conn, $result_niveis_aluno);
                         while ($row_niveis_aluno = mysqli_fetch_assoc($resultado_niveis_aluno)) { ?>
-                            <option value="<?php echo $row_niveis_aluno['id']; ?>"><?php echo $row_niveis_aluno['nome']; ?>
+                            <option value="<?php echo $row_niveis_aluno['id']; ?>"><?php echo $row_niveis_aluno['login']; ?>
                             </option><?php
                                     }
                                         ?>
@@ -128,19 +130,18 @@ session_start();
                 <div class="col-3"></div>
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="dataEmp">Data do Empréstimo:</label><br>
-                    <input name="dataEmp" class="form-control" type="date-local"  id="inputDateNow" required onkeypress="$(this).mask('00/00/0000 00:00:00')" >
-
+                    <input name="dataEmp" id="dataEmp" class="form-control" type="date" required onchange="atuDataDev();" onkeypress="$(this).mask('0000-00-00')" value="<?php echo date('Y-m-d') ?>">
                 </div>
 
 
                 <div class="form-group  col-3">
                     <label style="margin: auto;" for="dataDev">Data da Devolução:</label><br>
-                    <input name="dataDev" class="form-control" type="date-local" required onkeypress="$(this).mask('00/00/0000 00:00:00')" value="<?php echo date('d/m/Y', strtotime('+10 days'))?>" >
+                    <input name="dataDev" id="dataDev" class="form-control" type="date" required onkeypress="$(this).mask('0000-00-00')" value="<?php echo date('Y-m-d', strtotime('+10 days')) ?>">
                 </div>
                 <div class="col-3"></div>
-                
+
                 <div style="align-items: center;">
-                    <input class="btn btn-success" type="submit" name="btnCadastrar" value="Realizar">
+                    <input class="btn btn-success" onclick="pergunta()" type="button" name="btnCadastrar" value="Realizar">
                     <a href="inicial.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                 </div>
             </div>
