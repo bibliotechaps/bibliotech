@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Autor</title>
+    <title>Equipe</title>
     <link rel="stylesheet" href="css/arquivo1.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -19,7 +19,7 @@ session_start();
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JQuerry masks -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 
 </head>
@@ -54,47 +54,60 @@ session_start();
         <div class="hover" id="icone-aluno">
             <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
         </div>
+
     </div>
 
-    
 
 
-    <div class="container" id="menor">
 
-    
+    <div class="container">
 
-        <form method="post" autocomplete="off" action="insert-autor.php">
-
-        
+        <form method="post" autocomplete="off" action="insert-emprestimo.php" name="meuformulario">
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Adicionar Autor </b></h1>
-                <hr>
+                <h1 id="title"><b> Nossa Equipe </b></h1>
             </div>
+            <div class="col-2"></div>
+            <div class="col-12">
+                <h6 style="text-align: justify;">Bibliotech é um Trabalho de Conclusão de Curso do 3º ano de Informática em 2020, do IFMG - Campus Ouro Branco. Seu objetivo é facilitar o trabalho de profissionais bibliotecários de escolas públicas, afim de realizar empréstimo na escola com mais facilidade e economia de tempo. Destina-se principalmente para as escolas públicas urbanas e rurais da região. </h6>
+            </div>
+            <div class="col-2"></div>
 
+            <hr>
 
-
-            <div class="row justify-content-md-center ">
-                <div class="form-group col-auto col-6 col-lg-4 col-xl-3">
-                    <label style="margin: auto;" for="autor_id">Autor:</label>
-                    <input type="text" name="nome" placeholder="Nome do autor:" class="form-control" autofocus required>
+            <div>
+                <div class="col-12">
+                    <h5>Allan Teixeira de Sousa</h5>
+                    <h6 style="text-align: justify;"> Desenvolvedor do website e aluno do Curso Técnico Integrado em Informática do IFMG - Campus Ouro Branco. </h6>
+                    <img src="img/Allan2.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
                 </div>
-
-                         
-            </div>
-
-
-            <div class="row justify-content-md-center">
-
-                <div style="align-items: center;">
-                    <input type="submit" class="btn btn-success" name="btnAdicionar" value="Adicionar">
-                    <a href="adicionar-livro.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                <div class="col-6">
                 </div>
-
-
             </div>
 
+            <br>
+            <div>
+                <div class="col-12">
+                    <h5>Allan Teixeira de Sousa</h5>
+                    <h6 style="text-align: justify;"> Desenvolvedor do website e aluno do Curso Técnico Integrado em Informática do IFMG - Campus Ouro Branco. </h6>
+                    <img src="img/Allan2.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+
+            <br>
+            <div>
+                <div class="col-12">
+                    <h5>Allan Teixeira de Sousa</h5>
+                    <h6 style="text-align: justify;"> Desenvolvedor do website e aluno do Curso Técnico Integrado em Informática do IFMG - Campus Ouro Branco. </h6>
+                    <img src="img/Allan2.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+            <br><br>
         </form>
 
 

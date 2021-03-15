@@ -196,7 +196,7 @@ session_start();
 
                 <div class="col hover" style="text-align: center; color: white; margin-top: 40px;">
                     <h1>Bibliotech</h1>
-                    <a href="equipe.html"><img src="img/team.png" alt="IconeTeam"></a>Conheça nossa equipe
+                    <a href="equipe.php"><img src="img/team.png" alt="IconeTeam"></a>Conheça nossa equipe
                 </div>
             </div>
         </div>
