@@ -66,7 +66,8 @@ session_start();
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Nossa Equipe </b></h1>
+                <h1 id="title"><b> Nossa Equipe <hr style="width: 250px;"></b></h1>
+                
             </div>
             <div class="col-2"></div>
             <div class="col-12">
@@ -85,18 +86,18 @@ session_start();
                 <div class="col-6">
                 </div>
             </div>
-
+            <hr>
             <br>
             <div>
                 <div class="col-12">
-                    <h5>Allan Teixeira de Sousa</h5>
+                    <h5>Pedro Henrique Nunes Ribeiro Costa</h5>
                     <h6 style="text-align: justify;"> Desenvolvedor do website e aluno do Curso Técnico Integrado em Informática do IFMG - Campus Ouro Branco. </h6>
                     <img src="img/Allan2.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
                 </div>
                 <div class="col-6">
                 </div>
             </div>
-
+            <hr>
             <br>
             <div>
                 <div class="col-12">
