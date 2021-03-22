@@ -118,7 +118,8 @@ session_start();
 
           <div style="align-items: center;">
             <a href="perfil-editable-aluno.php"><button type="button" class="btn btn-primary">Editar</button></a>
-            <button type="button" class="btn btn-danger">Excluir</button>
+            <a href="excluir-aluno.php"><button type="button" class="btn btn-danger">Excluir</button></a>
+
           </div>
 
         </div>
