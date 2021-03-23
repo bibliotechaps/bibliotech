@@ -2,30 +2,27 @@
 session_start();
 include_once("conexao.php");
 
-if (isset($_POST['nome'])) {
-    $limiteEmprestimo = 5;
+    $nome = $_POST['nome'];
     $login = $_POST['login'];
     $email = $_POST['email'];
-    $nome = $_POST['nome'];
-    $dataNasc = $_POST['dataNasc'];
     $telefone = $_POST['telefone'];
+    $dataNasc = $_POST['dataNasc'];
+    $cpf = $_POST['cpf'];
     $cep = $_POST['cep'];
-    $endereco = $_POST['endereco'];
     $bairro = $_POST['bairro'];
-    $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
-    $cpf = $_SESSION['cpf'];
+    $cidade = $_POST['cidade'];
+    $endereco = $_POST['endereco'];
+    $id = $_GET['id'];
 
-    $sqlUpdate = "UPDATE aluno set nome = '$nome', login = '$login', email =  '$email', telefone = '$telefone', datanasc= '$dataNasc',  cep = '$cep', bairro = '$bairro', estado = '$estado', cidade = '$cidade', endereco=' $endereco'    where cpf = " . $cpf;
+    $sqlUpdate = "UPDATE aluno set nome = '$nome', login = '$login', email =  '$email', telefone = '$telefone', datanasc= '$dataNasc', cpf = '$cpf', cep = '$cep', bairro = '$bairro', estado = '$estado', cidade = '$cidade', endereco=' $endereco'    where id = " . $id;
 
     if ($conn->query($sqlUpdate) === TRUE) {
-        $_SESSION['login'] = $login;
-        $_SESSION['nome'] = $nome;
         ?>
 
         <script>
             alert('Registro atualizado com sucesso!');
-            window.location = 'perfil-aluno.php';
+            window.location = 'consultar-aluno.php';
             
         </script>
 
@@ -40,4 +37,3 @@ if (isset($_POST['nome'])) {
 
 <?php
     }
-}

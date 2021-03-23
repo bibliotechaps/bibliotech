@@ -81,7 +81,7 @@ session_start();
                 <div class="col-12">
                     <h5>Allan Teixeira de Sousa</h5>
                     <h6 style="text-align: justify;"> Desenvolvedor do website e aluno do Curso Técnico Integrado em Informática do IFMG - Campus Ouro Branco. </h6>
-                    <img src="img/Allan2.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
+                    <img src="img/lan.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
                 </div>
                 <div class="col-6">
                 </div>
@@ -92,7 +92,7 @@ session_start();
                 <div class="col-12">
                     <h5>Pedro Henrique Nunes Ribeiro Costa</h5>
                     <h6 style="text-align: justify;"> Desenvolvedor do website e aluno do Curso Técnico Integrado em Informática do IFMG - Campus Ouro Branco. </h6>
-                    <img src="img/Allan2.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
+                    <img src="img/Pedro.jpeg" alt="imagem Pedro" title="Perfil" width=”150” height="150">
                 </div>
                 <div class="col-6">
                 </div>
@@ -101,9 +101,9 @@ session_start();
             <br>
             <div>
                 <div class="col-12">
-                    <h5>Allan Teixeira de Sousa</h5>
+                    <h5>Samuel Vinicius Dutra de Souza</h5>
                     <h6 style="text-align: justify;"> Desenvolvedor do website e aluno do Curso Técnico Integrado em Informática do IFMG - Campus Ouro Branco. </h6>
-                    <img src="img/Allan2.jpeg" alt="imagem Allan" title="Perfil" width=”150” height="150">
+                    <img src="img/samuel.jpeg" alt="imagem Samuel" title="Perfil" width=”150” height="150">
                 </div>
                 <div class="col-6">
                 </div>

@@ -93,7 +93,7 @@ include_once('conexao.php');
     </div>
 
 
-    <div class="container">
+    <div class="container" id="menor"> 
         <?php
 
         //comando sql para selecionar os livros cadastradas

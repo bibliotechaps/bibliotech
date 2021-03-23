@@ -63,9 +63,9 @@ include('verifica_login.php');
         </div>
 
         <div class="align-text-center">
-        <h4 id="title" style=" text-transform: uppercase" > Bem vindo, <?php
-                                        echo $_SESSION['login'];
-                                        ?></h4>
+            <h4 id="title" style=" text-transform: uppercase"> Bem vindo, <?php
+                                                                            echo $_SESSION['login'];
+                                                                            ?></h4>
         </div>
 
         <br>
@@ -74,17 +74,19 @@ include('verifica_login.php');
 
         </div>
         <br>
+
+        <div class="container">
+            <a href="consultar-aluno.php" class="hover"><img src="img/user-pesqui.png" alt="Consultar Aluno"></a> Consultar Aluno
+        </div>
+        <br>
         <div class="container">
             <a href="adicionar-livro.php" class="hover"><img src="img/book.png" alt="Adcionar Livro"></a> Adicionar Livro
-
         </div>
         <br>
+
         <div class="container">
             <a href="efetuar-emprestimo.php" class="hover"><img src="img/efetuar.png" alt="Efetuar Emprestimo"></a> Efetuar Empréstimo
-        </div>
-        <br>
-        <div class="container">
-            <a href="consultar-aluno.php" class="hover"><img src="img/file-list-fill.png" alt="Consultar Aluno"></a> Consultar Aluno
+
         </div>
         <br>
         <div class="container">
