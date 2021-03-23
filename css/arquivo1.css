@@ -105,3 +105,9 @@ body, html{
     display: block;
 }
 
+.table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+

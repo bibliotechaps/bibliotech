@@ -20,14 +20,6 @@ include_once('conexao.php');
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        function confirmarExclusao(id, tt) {
-            if (window.confirm("Deseja realmente excluir :\n" + id + "-" + tt)) {
-                window.location = "excluir-aluno.php?id=" + id;
-            }
-        }
-    </script>
-
 
     <script text="text/javascript">
         $(document).ready(function() {
@@ -39,9 +31,9 @@ include_once('conexao.php');
                 pesquisa: pesquisa
             }
 
-            //enviar os dados via post para consultar-aluno.php
+            //enviar os dados via post para consultar-livro.php
             $.post('pesquisa-aluno.php', dados, function(retorna) {
-                //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-aluno.php
+                //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-livro.php
                 $(".resultados").html(retorna);
             });
 
@@ -59,15 +51,22 @@ include_once('conexao.php');
                     pesquisa: pesquisa
                 }
 
-                //enviar os dados via post para consultar-aluno.php
+                //enviar os dados via post para consultar-livro.php
                 $.post('pesquisa-aluno.php', dados, function(retorna) {
-                    //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-aluno.php
+                    //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-livro.php
                     $(".resultados").html(retorna);
                 });
             });
         });
     </script>
 
+    <script>
+        function confirmarExclusao(id, nome) {
+            if (window.confirm("Deseja realmente apagar o registro:\n" + id + "-" + nome)) {
+                window.location = "excluir-aluno.php?id=" + id;
+            }
+        }
+    </script>
 </head>
 
 <body id="busca">
@@ -86,7 +85,9 @@ include_once('conexao.php');
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                            echo $_SESSION['login'];
+                                                                                                            ?>
         </div>
         <div id="icone-sair" class="hover">
             <a href="logout.php"><img src="img/logout.png" alt="imagem login" title="Sair"></a>Sair
@@ -103,23 +104,23 @@ include_once('conexao.php');
     <div class="container">
         <?php
 
-        
-        $sql = "SELECT * FROM bibliotech.aluno order by cpf";
+        //comando sql para selecionar os livros cadastradas
+        $sql = "SELECT * FROM bibliotech.autor order by nome";
         //executar o comando sql
-        $dadosAluno = $conn->query($sql);
-        if ($dadosAluno->num_rows > 0) {
+        $dadosAutor = $conn->query($sql);
+        if ($dadosAutor->num_rows > 0) {
         ?>
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Consultar Aluno </b></h1>
+                <h1 id="title"><b> Consultar Autor </b></h1>
                 <hr>
             </div>
 
             <form id="form-pesquisa" action="" method="post">
-                <h3>Pesquisar aluno</h3>
+                <h3>Pesquisar Autor</h3>
 
-                <input type="text" id="pesquisa" name="pesquisa" placeholder="Informe cpf do(s) aluno(s) a ser(em) pesquisado(s):" value="" size="50" class="form-control" style="width: 50%"> <br>
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Informe o nome ou o cpf do aluno a ser pesquisado:" value="" size="50" class="form-control" style="width: 50%"> <br>
                 <input type="submit" class="btn btn-primary" name="enviar" value="Pesquisar"> <br> <br>
 
 
@@ -127,6 +128,7 @@ include_once('conexao.php');
 
 
             <div class="resultados" style="min-height: 230px;">
+                <!--Os dados da busca efetuada pelo aquivo buscaPessoa.php, serão exibidos aqui-->
             </div>
            
         <?php
