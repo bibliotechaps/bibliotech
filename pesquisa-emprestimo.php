@@ -1,4 +1,4 @@
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" style="width: 70% !important; margin: auto;">
         <tr>
             <td><b>ID</b></td>
             <td><b>Data Inicial</b></td>

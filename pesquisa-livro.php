@@ -14,7 +14,7 @@
      $dadosLivros = $conn->query($sql);
      if($dadosLivros->num_rows > 0){
         ?>
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover" style="width: 93% !important; margin: auto;">
                     <tr>
                         <td><b>ID</b></td>
                         <td><b>ISBN</b></td>

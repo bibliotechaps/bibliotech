@@ -55,9 +55,6 @@
         <div class="hover" id="icone-home">
             <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
         </div>
-        <div class="hover" id="icone-aluno">
-            <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
-        </div>
     </div>
 
 
@@ -78,7 +75,7 @@
 
                 <br>
 
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" style="width: 26% !important; margin: auto;">
                     <tr>
                         <td><b>ID</b></td>
                         <td><b>Editoras</b></td>

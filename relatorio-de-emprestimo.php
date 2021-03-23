@@ -79,7 +79,9 @@ include_once('conexao.php');
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
+                                                                                                            echo $_SESSION['login'];
+                                                                                                            ?>
         </div>
         <div id="icone-sair" class="hover">
             <a href="logout.php"><img src="img/logout.png" alt="imagem login" title="Sair"></a>Sair
@@ -87,13 +89,10 @@ include_once('conexao.php');
         <div class="hover" id="icone-home">
             <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
         </div>
-        <div class="hover" id="icone-aluno">
-            <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
-        </div>
     </div>
 
 
-    <div class="container" id="menor"> 
+    <div class="container"> 
         <?php
 
         //comando sql para selecionar os livros cadastradas

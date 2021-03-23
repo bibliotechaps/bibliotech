@@ -54,9 +54,6 @@ session_start();
   <div class="hover" id="icone-home">
     <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
   </div>
-  <div class="hover" id="icone-aluno">
-    <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
-  </div>
   <div class="container">
     <form method="POST" action="insert-aluno.php" autocomplete="off">
 

@@ -9,7 +9,7 @@ include_once('conexao.php');
 
       <meta charset="UTF-8">
       <meta name="viewport" content="widht= device-widht, initial-scale = 1.0">
-      <title>Perfil Aluno</title>
+      <title>Editar Aluno</title>
 
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -49,9 +49,6 @@ include_once('conexao.php');
       <div class="hover" id="icone-home">
         <a href="inicial.php"><img src="img/home.png" alt="imagem home" title="Página Inicial"></a>Inicial
       </div>
-      <div class="hover" id="icone-aluno">
-        <a href="perfil-aluno.php"><img src="img/aluno.png" alt="imagem aluno" title="Aluno"></a>Aluno
-      </div>
       <div class="container">
 
         <?php
@@ -67,7 +64,7 @@ include_once('conexao.php');
         <form name="Editar Perfil aluno" action="editable-aluno.php?id=<?php echo $aluno["id"]?>" method="POST" style="padding: 20px; align-content: center; ">
 
           <div class="row justify-content-around">
-            <h1 id="title"><b>Perfil aluno</b></h1>
+            <h1 id="title"><b>Editar aluno</b></h1>
             <hr width="100%">
 
             <div class="row justify-content-around p-3 w-100 m-0">

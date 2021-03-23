@@ -10,7 +10,7 @@ $dataFinal = $_POST["dataDev"];
 $sqlEmp = "SELECT * from emprestimo where aluno_id = '$aluno_id'";
 $dadosEmp = $conn->query($sqlEmp);
 //verifica se o aluno já tem dois emprestimos pendentes
-if ($dadosEmp->num_rows > 2) {
+if ($dadosEmp->num_rows > 1) {
 ?>
     <script>
         alert('Esse aluno já pussui dois empréstimos pendentes.');

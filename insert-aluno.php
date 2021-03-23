@@ -21,7 +21,7 @@ if ($conn->query($sql)) {
 ?>
     <script>
         alert('Registro inserido com sucesso!');
-        window.location = 'perfil-aluno.php';
+        window.location = 'consultar-aluno.php';
     </script>
 
 <?php
@@ -29,7 +29,7 @@ if ($conn->query($sql)) {
 ?>
     <script>
         alert('Erro ao inserir o registro!');
-        //window.location = 'cadastroAluno.php';
+        window.location = 'cadastroAluno.php';
     </script>
 
 <?php

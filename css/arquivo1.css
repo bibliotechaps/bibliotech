@@ -19,7 +19,7 @@
 
 #icone-perfil{
     position: absolute;
-    left: 75%;
+    left: 85%;
     top: 16px;
     color: #d4cfcf;
     
@@ -32,23 +32,16 @@
 }
 #icone-home{
     position: absolute;
-    left: 55%;
+    left: 65%;
     top: 16px;
     color: #d4cfcf;
 }
 #icone-livro{
     position: absolute;
-    left: 65%;
+    left: 75%;
     top: 16px;
     color: #d4cfcf;
 }
-#icone-aluno{
-    position: absolute;
-    left: 85%;
-    top: 16px;
-    color: #d4cfcf;
-}
-
 
 
 .imagemFundoTop{
