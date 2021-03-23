@@ -107,18 +107,18 @@ include_once('conexao.php');
         //comando sql para selecionar os livros cadastradas
         $sql = "SELECT * FROM bibliotech.autor order by nome";
         //executar o comando sql
-        $dadosAutor = $conn->query($sql);
-        if ($dadosAutor->num_rows > 0) {
+        $dadosAluno = $conn->query($sql);
+        if ($dadosAluno->num_rows > 0) {
         ?>
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Consultar Autor </b></h1>
+                <h1 id="title"><b> Consultar Aluno </b></h1>
                 <hr>
             </div>
 
             <form id="form-pesquisa" action="" method="post">
-                <h3>Pesquisar Autor</h3>
+                <h3>Pesquisar Aluno</h3>
 
                 <input type="text" id="pesquisa" name="pesquisa" placeholder="Informe o nome ou o cpf do aluno a ser pesquisado:" value="" size="50" class="form-control" style="width: 50%"> <br>
                 <input type="submit" class="btn btn-primary" name="enviar" value="Pesquisar"> <br> <br>
