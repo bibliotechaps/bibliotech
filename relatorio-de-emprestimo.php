@@ -9,7 +9,7 @@ include_once('conexao.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultar Aluno</title>
+    <title>Relatório de Empréstimo</title>
     <link rel="stylesheet" href="css/arquivo1.css   ">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -32,7 +32,7 @@ include_once('conexao.php');
             }
 
             //enviar os dados via post para consultar-livro.php
-            $.post('pesquisa-aluno.php', dados, function(retorna) {
+            $.post('pesquisa-emprestimo.php', dados, function(retorna) {
                 //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-livro.php
                 $(".resultados").html(retorna);
             });
@@ -52,7 +52,7 @@ include_once('conexao.php');
                 }
 
                 //enviar os dados via post para consultar-livro.php
-                $.post('pesquisa-aluno.php', dados, function(retorna) {
+                $.post('pesquisa-emprestimo.php', dados, function(retorna) {
                     //o parametro retorna é o responsável por recuperar os dados que vem do arquivo consultar-livro.php
                     $(".resultados").html(retorna);
                 });
@@ -60,13 +60,7 @@ include_once('conexao.php');
         });
     </script>
 
-    <script>
-        function confirmarExclusao(id, nome) {
-            if (window.confirm("Deseja realmente apagar o registro:\n" + id + "-" + nome)) {
-                window.location = "excluir-aluno.php?id=" + id;
-            }
-        }
-    </script>
+
 </head>
 
 <body id="busca">
@@ -85,9 +79,7 @@ include_once('conexao.php');
             <a href="consultar-livro.php"><img src="img/book-mark.png" alt="ConsultarLivro" title="Livro"></a>Livro
         </div>
         <div id="icone-perfil" class="hover">
-            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a><?php
-                                                                                                            echo $_SESSION['login'];
-                                                                                                            ?>
+            <a href="perfil-admin.php"><img src="img/profile.png" alt="imagem profile" title="Perfil"></a>Perfil
         </div>
         <div id="icone-sair" class="hover">
             <a href="logout.php"><img src="img/logout.png" alt="imagem login" title="Sair"></a>Sair
@@ -105,22 +97,22 @@ include_once('conexao.php');
         <?php
 
         //comando sql para selecionar os livros cadastradas
-        $sql = "SELECT * FROM bibliotech.autor order by nome";
+        $sql = "SELECT * FROM bibliotech.emprestimo order by id";
         //executar o comando sql
-        $dadosAutor = $conn->query($sql);
-        if ($dadosAutor->num_rows > 0) {
+        $dadosEmprestimos = $conn->query($sql);
+        if ($dadosEmprestimos->num_rows > 0) {
         ?>
 
             <!--Título-->
             <div class="col-12 mb-2">
-                <h1 id="title"><b> Consultar Autor </b></h1>
+                <h1 id="title"><b>  Relatório de Empréstimo </b></h1>
                 <hr>
             </div>
 
             <form id="form-pesquisa" action="" method="post">
-                <h3>Pesquisar Autor</h3>
+                <h3>Pesquisar Empréstimo</h3>
 
-                <input type="text" id="pesquisa" name="pesquisa" placeholder="Informe o nome ou o cpf do aluno a ser pesquisado:" value="" size="50" class="form-control" style="width: 50%"> <br>
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Informe o nome do aluno ou do livro a ser pesquisado:" value="" size="50" class="form-control" style="width: 50%"> <br>
                 <input type="submit" class="btn btn-primary" name="enviar" value="Pesquisar"> <br> <br>
 
 

@@ -83,6 +83,14 @@ include('verifica_login.php');
             <a href="efetuar-emprestimo.php" class="hover"><img src="img/efetuar.png" alt="Efetuar Emprestimo"></a> Efetuar Empréstimo
         </div>
         <br>
+        <div class="container">
+            <a href="consultar-aluno.php" class="hover"><img src="img/file-list-fill.png" alt="Consultar Aluno"></a> Consultar Aluno
+        </div>
+        <br>
+        <div class="container">
+            <a href="relatorio-de-emprestimo.php" class="hover"><img src="img/file-list-3-fill.png" alt="Relatório de Empréstimo"></a> Relatório de Empréstimo
+        </div>
+        <br>
     </div>
     <!--Div para a imagem de fundo de baixo (ter em todos os códigos)-->
     <div class="imagemFundoBottom">
